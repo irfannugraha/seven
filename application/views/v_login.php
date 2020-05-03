@@ -14,8 +14,32 @@
 
 <body>
     <!-- Start: Registration Form with Photo -->
-    <div class="register" style="background-image: url(&quot;<?php echo base_url() ?>assets/assets/images/Group%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><h2 class="text-center">SEVEN</h2>
+    <div class="register" style="background-image: url('<?php echo base_url() ?>assets/assets/images/Group%202.png');background-position: center;background-size: contain;background-repeat: no-repeat;"><h2 class="text-center">SEVEN</h2>
         <!-- Start: Form Container -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Masukan Email Akun Anda</h2><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body" style="margin: 10px; padding: 0px;">
+                    <!-- Start: seven form -->
+                    <form method="post" action="<?php echo base_url(). 'c_login/send'; ?>">
+                        <div class="form-group"><label class="form-label">Email</label>
+                            <input class="form-control" type="email" name="curEmail" placeholder="example@email.com">
+                        </div>
+                        <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Kirim</button></div>
+                    </form>
+                    <!-- End: seven form -->
+                </div>
+            </div>
+            
+            </div>
+        </div>        
+
         <div class="form-container">
             <form method="post" action="<?php echo base_url(). 'c_login/login'; ?>">
                 <h1>Masuk</h1>
@@ -30,7 +54,8 @@
                     <div class="separator"><span>atau login dengan</span></div>
                 </div>
                 <div class="form-group">
-                    <a class="Lupa_Sandi" href="<?php echo base_url(). 'c_login/send'; ?>">Lupa Kata Sandi?</a>
+                    <button type="button" class="btn btn-link Lupa_Sandi" data-toggle="modal" data-target="#myModal">Lupa Kata Sandi?</button>                    
+                    <!-- <a class="Lupa_Sandi" href="<?php echo base_url(). 'c_login/send'; ?> data-toggle="modal" data-target="#myModal"">Lupa Kata Sandi?</a> -->
                 </div>
                 <div class="form-group"><button class="btn btn-outline-primary btn-block" type="submit"><i class="fab fa-google"></i>Google</button></div>
                 <div class="form-group"><button class="btn btn-outline-primary btn-block" type="submit"><i class="fab fa-facebook-square"></i>Facebook</button></div>

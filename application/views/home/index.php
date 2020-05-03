@@ -120,32 +120,28 @@
             <div class="col-md-10 titleGroup">
                 <h2>Produk Terlaris</h2>
                 <div class="row justify-content-center listProduk">
-                    <?php for ($x = 0; $x < count($popular); $x++) : ?>
+                    <?php foreach ($popular as $key => $popular) : ?>
                     <div class="kotakProduk pb-3">
-                        <a class href="<?= base_url(); ?>detailbarang/index/<?= $popular[$x]['id_barang'] ?>">
+                        
+                        <a href="<?php echo base_url() .'C_Barang/index/'. $popular->Get_Id_barang() ?><?php if ($pelanggan){echo "/".$pelanggan->Get_Id_pelanggan();}?>">
                             <div class="fotoProduk">
-                                <img src="<?= $popular[$x]['foto'] ?>" alt="Produk 1">
+                                <img src="<?= $popular->Get_Foto() ?>" alt="Produk 1">
                             </div>
                             <div class="detailProduk mx-3 mt-2">
-                                <h5 class="titleProduk"><?= $popular[$x]['nama'] ?></h5>
-                                <p class="hargaProduk mt-2">Rp <?= number_format($popular[$x]['harga_awal'],0,".",".") ?> - Rp <?= number_format($popular[$x]['harga_akhir'],0,".",".") ?></p>
+                                <h5 class="titleProduk"><?= $popular->Get_Nama() ?></h5>
+                                <p class="hargaProduk mt-2">Rp <?= number_format($popular->Get_Harga_awal(),0,".",".") ?> - Rp <?= number_format($popular->Get_Harga_akhir(),0,".",".") ?></p>
                                 <div class="mt-1">
-                                    <img class="iconPlace" src="<?= base_url() ?>/assets/assets/images/icon_place.svg" alt="Place"> <span class="vendorplace"><?= $lokasiPopular[$x] ?></span>
+                                    <img class="iconPlace" src="<?= base_url() ?>/assets/assets/images/icon_place.svg" alt="Place"> <span class="vendorplace"><?= $lokasiPopular[$key] ?></span>
                                 </div>
-                                <!-- <?php $n = 5 - $popular[$x]['jumlahRating'] ?> -->
                                 <div class="rating my-2 d-flex align-items-center">
-                                    <!-- <?php for ($i = 0; $i < $popular[$x]['jumlahRating']; $i++) : ?> -->
                                     <i class="fas fa-star float-left starRating"></i>
-                                    <!-- <?php endfor ; ?> -->
-                                    <!-- <?php for ($i = 0; $i < $n; $i++) : ?> -->
                                     <i class="fas fa-star float-left starRating star5"></i>
-                                    <!-- <?php endfor ; ?> -->
-                                    <span class="ml-1 ratingCount">(<?= $popular[$x]['rating'] ?>)</span>
+                                    <span class="ml-1 ratingCount">(<?= $popular->Get_Rating() ?>)</span>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <?php endfor ; ?>
+                    <?php endforeach ; ?>
                 </div>
             </div>
         </div>
@@ -164,23 +160,18 @@
                     <div class="kotakProduk pb-3">
                         <a class href="#">
                             <div class="fotoProduk">
-                                <img src="<?= $lastest[$x]['foto'] ?>" alt="Produk 1">
+                                <img src="<?= $lastest[$x]->Get_Foto() ?>" alt="Produk 1">
                             </div>
                             <div class="detailProduk mx-3 mt-2">
-                                <h5 class="titleProduk"><?= $lastest[$x]['nama'] ?></h5>
-                                <p class="hargaProduk mt-2">Rp <?= number_format($lastest[$x]['harga_awal'],0,".",".") ?> - Rp <?= number_format($lastest[$x]['harga_akhir'],0,".",".") ?></p>
+                                <h5 class="titleProduk"><?= $lastest[$x]->Get_Nama() ?></h5>
+                                <p class="hargaProduk mt-2">Rp <?= number_format($lastest[$x]->Get_Harga_awal(),0,".",".") ?> - Rp <?= number_format($lastest[$x]->Get_Harga_akhir(),0,".",".") ?></p>
                                 <div class="mt-1">
                                     <img class="iconPlace" src="<?= base_url() ?>/assets/assets/images/icon_place.svg" alt="Place"> <span class="vendorplace"><?= $lokasiLastest[$x] ?></span>
                                 </div>
-                                <!-- <?php $n = 5 - $lastest[$x]['jumlahRating'] ?> -->
                                 <div class="rating my-2 d-flex align-items-center">
-                                    <!-- <?php for ($i = 0; $i < $lastest[$x]['jumlahRating']; $i++) : ?> -->
                                     <i class="fas fa-star float-left starRating"></i>
-                                    <!-- <?php endfor ; ?> -->
-                                    <!-- <?php for ($i = 0; $i < $n; $i++) : ?> -->
                                     <i class="fas fa-star float-left starRating star5"></i>
-                                    <!-- <?php endfor ; ?> -->
-                                    <span class="ml-1 ratingCount">(<?= $lastest[$x]['rating'] ?>)</span>
+                                    <span class="ml-1 ratingCount">(<?= $lastest[$x]->Get_Rating() ?>)</span>
                                 </div>
                             </div>
                         </a>
@@ -192,72 +183,6 @@
     </div>
 
     <!-- list barang - produk terbaru end-->
-
-    <!-- list barang - Jasa terbaru -->
-
-    <!-- DIILANGIN DULU, BELUM ADA DATANYA DI DATABASE -->
-
-    <!-- <div class="container-fluid d-none">
-        <div class="row justify-content-center kolom">
-            <div class="col-md-10 titleGroup">
-                <h2>Jasa Terbaru</h2>
-                <div class="row justify-content-center listProduk">
-                <?php for ($x = 0; $x < count($jasa)-1; $x++) : ?>
-                    <div class="kotakProduk pb-3">
-                        <a class href="#">
-                            <div class="fotoProduk">
-                                <img src="<?= $jasa[$x]['foto'] ?>" alt="Produk 1">
-                            </div>
-                            <div class="detailProduk mx-3 mt-2">
-                                <h5 class="titleProduk"><?= $jasa[$x]['nama'] ?></h5>
-                                <p class="hargaProduk mt-2">Rp <?= number_format($jasa[$x]['harga_awal'],0,".",".") ?> - Rp <?= number_format($jasa[$x]['harga_akhir'],0,".",".") ?></p>
-                                <div class="mt-1">
-                                    <img class="iconPlace" src="<?= base_url() ?>/assets/assets/images/icon_place.svg" alt="Place"> <span class="vendorplace">Bandung</span>
-                                </div>
-                                <?php $n = 5 - $jasa[$x]['jumlahRating'] ?>
-                                <div class="rating my-2 d-flex align-items-center">
-                                    <?php for ($i = 0; $i < $jasa[$x]['jumlahRating']; $i++) : ?>
-                                    <i class="fas fa-star float-left starRating"></i>
-                                    <?php endfor ; ?>
-                                    <?php for ($i = 0; $i < $n; $i++) : ?>
-                                    <i class="fas fa-star float-left starRating star5"></i>
-                                    <?php endfor ; ?>
-                                    <span class="ml-1 ratingCount">(<?= $jasa[$x]['jumrating'] ?>)</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <?php endfor ; ?>
-                    <div class="kotakProduk pb-3 last">
-                        <a class href="#">
-                            <div class="fotoProduk">
-                                <img src="<?= $jasa[count($jasa)-1]['foto'] ?>" alt="Produk 1">
-                            </div>
-                            <div class="detailProduk mx-3 mt-2">
-                                <h5 class="titleProduk"><?= $jasa[count($jasa)-1]['nama'] ?></h5>
-                                <p class="hargaProduk mt-2">Rp <?= number_format($jasa[count($jasa)-1]['harga_awal'],0,".",".") ?> - Rp <?= number_format($jasa[count($jasa)-1]['harga_akhir'],0,".",".") ?></p>
-                                <div class="mt-1">
-                                    <img class="iconPlace" src="<?= base_url() ?>/assets/assets/images/icon_place.svg" alt="Place"> <span class="vendorplace">Bandung</span>
-                                </div>
-                                <?php $n = 5 - $jasa[count($jasa)-1]['jumlahRating'] ?>
-                                <div class="rating my-2 d-flex align-items-center">
-                                    <?php for ($i = 0; $i < $jasa[count($jasa)-1]['jumlahRating']; $i++) : ?>
-                                    <i class="fas fa-star float-left starRating"></i>
-                                    <?php endfor ; ?>
-                                    <?php for ($i = 0; $i < $n; $i++) : ?>
-                                    <i class="fas fa-star float-left starRating star5"></i>
-                                    <?php endfor ; ?>
-                                    <span class="ml-1 ratingCount">(<?= $jasa[count($jasa)-1]['jumrating'] ?>)</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- list barang - Jasa terbaru end-->
 
     <div class="container-fluid">
         <div class="row justify-content-center kolom mt-5">

@@ -2,36 +2,32 @@
 
 class Vendor extends CI_Model
 {
-    var $id_pelanggan;
     var $id_vendor;
-    var $nama;
-    var $tanggal_lahir;
-    var $jenis_kelamin;
-    var $email;
-    var $password;
-    var $last_update;
-    var $alamat;
-    var $no_hp;
-    var $profil_image;
+    var $nama_vendor;
+    var $hp_vendor;
+    var $alamat_vendor;
+
+    var $daerah_vendor;
+    var $profile_img;
+    var $header_vendor;
+    var $deskripsi_vendor;
+    var $email_vendor;
+    var $deleted;
 
     // var $barang;
 
-    public function __construct($id_pelanggan, $id_vendor, $nama, $tanggal_lahir, $jenis_kelamin, $email, $password, $last_update, $alamat, $no_hp, $profil_image){
-        $this->id_pelanggan = $id_pelanggan;
+    public function __construct($id_vendor, $nama_vendor, $hp_vendor, $alamat_vendor, $daerah_vendor=null, $profile_img=null, $header_vendor=null, $deskripsi_vendor=null, $email_vendor=null, $deleted=0){
         $this->id_vendor = $id_vendor;
-        $this->nama = $nama;
-        $this->tanggal_lahir = $tanggal_lahir;
-        $this->jenis_kelamin = $jenis_kelamin;
-        $this->email = $email;
-        $this->password = $password;
-        $this->last_update = $last_update;
-        $this->alamat = $alamat;
-        $this->no_hp = $no_hp;
-        $this->profil_image = $profil_image;
+        $this->nama_vendor = $nama_vendor;
+        $this->alamat_vendor = $alamat_vendor;
+        $this->daerah_vendor = $daerah_vendor;
+        $this->hp_vendor = $hp_vendor;
+        $this->profile_img = $profile_img;
+        $this->header_vendor = $header_vendor;
+        $this->deskripsi_vendor = $deskripsi_vendor;
+        $this->email_vendor = $email_vendor;
+        $this->deleted = $deleted;
     }
-
-    // public function __construct(){
-    // }
 
     public function Add_Barang($barang){
         // $this->barang = new Barang();
@@ -50,116 +46,85 @@ class Vendor extends CI_Model
     }
 
     // setter
-    public function Set_Id_pelanggan($id_pelanggan)
-    {
-        $this->id_pelanggan = $id_pelanggan;
-    }
-
-    public function Set_Id_vendor($id_vendor)
-    {
+    public function Set_Id_vendor($id_vendor){
         $this->id_vendor = $id_vendor;
     }
 
-    public function Set_Nama($nama)
-    {
-        $this->nama = $nama;
+    public function Set_Nama_vendor($nama_vendor){
+        $this->nama_vendor = $nama_vendor;
     }
 
-    public function Set_Tanggal_lahir($tanggal_lahir)
-    {
-        $this->tanggal_lahir = $tanggal_lahir;
+    public function Set_Alamat_vendor($alamat_vendor){
+        $this->alamat_vendor = $alamat_vendor;
     }
 
-    public function Set_Jenis_kelamin($jenis_kelamin)
-    {
-        $this->jenis_kelamin = $jenis_kelamin;
+    public function Set_Daerah_vendor($daerah_vendor){
+        $this->daerah_vendor = $daerah_vendor;
     }
 
-    public function Set_Email($email)
-    {
-        $this->email = $email;
+    public function Set_Hp_vendor($hp_vendor){
+        $this->hp_vendor = $hp_vendor;
     }
 
-    public function Set_Password($password)
-    {
-        $this->password = $password;
+    public function Set_Profile_img($profile_img){
+        $this->profile_img = $profile_img;
     }
 
-    public function Set_Last_update($last_update)
-    {
-        $this->last_update = $last_update;
+    public function Set_Header_vendor($header_vendor){
+        $this->header_vendor = $header_vendor;
     }
 
-    public function Set_Alamat($alamat)
-    {
-        $this->alamat = $alamat;
+    public function Set_Deskripsi_vendor($deskripsi_vendor){
+        $this->deskripsi_vendor = $deskripsi_vendor;
     }
 
-    public function Set_No_hp($no_hp)
-    {
-        $this->no_hp = $no_hp;
+    public function Set_Email_vendor($email_vendor){
+        $this->email_vendor = $email_vendor;
     }
 
-    public function Set_Profil_image($profil_image)
-    {
-        $this->profil_image = $profil_image;
+    public function Set_Deleted($deleted){
+        $this->deleted = $deleted;
     }
-
 
     // getter
-    public function Get_Id_pelanggan()
-    {
-        return $this->id_pelanggan;
-    }
-
-    public function Get_Id_vendor()
-    {
+    public function Get_Id_vendor(){
         return $this->id_vendor;
     }
 
-    public function Get_Nama()
-    {
-        return $this->nama;
+    public function Get_Nama_vendor(){
+        return $this->nama_vendor;
     }
 
-    public function Get_Tanggal_lahir()
-    {
-        return $this->tanggal_lahir;
+    public function Get_Alamat_vendor(){
+        return $this->alamat_vendor;
     }
 
-    public function Get_Jenis_kelamin()
-    {
-        return $this->jenis_kelamin;
+    public function Get_Daerah_vendor(){
+        return $this->daerah_vendor;
     }
 
-    public function Get_Email()
-    {
-        return $this->email;
+    public function Get_Hp_vendor(){
+        return $this->hp_vendor;
     }
 
-    public function Get_Password()
-    {
-        return $this->password;
+    public function Get_Profile_img(){
+        return $this->profile_img;
     }
 
-    public function Get_Last_update()
-    {
-        return $this->last_update;
+    public function Get_Header_vendor(){
+        return $this->header_vendor;
     }
 
-    public function Get_Alamat()
-    {
-        return $this->alamat;
+    public function Get_Deskripsi_vendor(){
+        return $this->deskripsi_vendor;
     }
 
-    public function Get_No_hp()
-    {
-        return $this->no_hp;
+    public function Get_Email_vendor(){
+        return $this->email_vendor;
     }
 
-    public function Get_Profil_image()
-    {
-        return $this->profil_image;
+    public function Get_Deleted(){
+        return $this->deleted;
     }
 
 

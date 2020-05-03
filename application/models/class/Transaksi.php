@@ -7,17 +7,16 @@ class Transaksi
     var $id_barang;
     var $tanggal_pembayaran;
     var $tanggal_pemesanan;
+    var $deleted;
 
-    public function __construct($idTransaksi, $idPelanggan, $idBarang, $tglPemesanan, $tglPembayaran=null){
+    public function __construct($idTransaksi, $idPelanggan, $idBarang, $tglPemesanan, $tglPembayaran=null, $deleted=0){
         $this->id_transaksi = $idTransaksi;
         $this->id_pelanggan = $idPelanggan;
         $this->id_barang = $idBarang;
         $this->tanggal_pembayaran = $tglPembayaran;
         $this->tanggal_pemesanan = $tglPemesanan;
+        $this->deleted = $deleted;
     }
-
-    // public function __construct(){
-    // }
 
     public function View_Transaksi(){
         
@@ -48,6 +47,10 @@ class Transaksi
         $this->status = $status;
     }
 
+    public function Set_Deleted($deleted){
+        $this->deleted = $deleted;
+    }
+
     // getter
     public function Get_IdTransaksi(){
         return $this->idTransaksi;
@@ -71,6 +74,10 @@ class Transaksi
 
     public function Get_Status(){
         return $this->status;
+    }
+
+    public function Get_Deleted(){
+        return $this->deleted;
     }
 
 }

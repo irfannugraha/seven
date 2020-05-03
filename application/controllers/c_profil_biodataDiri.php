@@ -4,22 +4,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class c_profil_biodataDiri extends CI_Controller {
 	function __construct(){
 		parent::__construct();
-		$this->load->model('m_profil_biodataDiri');
-		$this->load->helper('url');
+		// $this->load->model('m_profil_biodataDiri');
+		$this->load->model('class/Model');
 	}
  
-	public function index($idU){
-		$data['judul'] = "Profile - Biodata Diri";
-		$data['pelanggan'] = $this->m_profil_biodataDiri->get_user($idU);
-		$idV = $data['pelanggan'][0]['id_vendor'];
-		$data['vendor'] = $this->m_profil_biodataDiri->get_vendor($idV);
+	public function index($idU, $tab='biodata'){
+		$data['pelanggan'] = $this->Model->Get_Pelanggan($idU)[0];
+		$idV = $data['pelanggan'] -> Get_Id_Vendor();
+		$data['vendor'] = $this->Model->Get_Vendor($idV)[0];
+		$data['judul'] = "Biodata Diri - ". $data['pelanggan'] -> Get_Nama();
+
+		$data['tab'] = $tab;
+
 		$this->load->view('template/navbarlogin', $data);
 		$this->load->view('v_profil_biodataDiri',$data);
 		$this->load->view('template/footer');
-	}
-	
-	public function tambahAkun(){
-		$this->m_profil_biodataDiri->insert_akun();
 	}
 
 	public function update_pelanggan($status, $idU){
@@ -42,44 +41,66 @@ class c_profil_biodataDiri extends CI_Controller {
 				};
 				break;
 			case 'informasi':
-				$this->m_profil_biodataDiri->update_user_informasiUmum($idU);
+				$data = [
+					"nama" => $this->input->post('nama'),
+					"tanggal_lahir" => $this->input->post('tanggal_lahir'),
+					"jenis_kelamin" => $this->input->post('jenis_kelamin'),
+				];
 				break;
 			case 'emtel':
-				$this->m_profil_biodataDiri->update_user_emailtelp($idU);
+				$data = [
+					"email" => $this->input->post('email'),
+					"no_hp" => $this->input->post('telepon'),
+				];
 				break;
 			case 'alamat':
-				$this->m_profil_biodataDiri->update_user_alamat($idU);
+				$data = [
+					"alamat" => $this->input->post('alamat'),
+				];
 				break;
 		}
+		$this->Model->update_pelanggan($idU, $data);
 		redirect('c_profil_biodataDiri/index/'.$idU);
 	}
 
-	public function update_vendor($status, $idU){
-		$data['pelanggan'] = $this->m_profil_biodataDiri->get_user($idU);
-		$idV = $data['pelanggan'][0]['id_vendor'];
+	public function update_vendor($status, $idU, $idV){
 		switch ($status) {
 			case 'informasi':
-				$this->m_profil_biodataDiri->update_vendor_informasiUmum($idV);
+				$data = [
+					"nama_vendor" => $this->input->post('nama_vendor'),
+					"deskripsi_vendor" => $this->input->post('deskripsi_vendor'),
+					"hp_vendor" => $this->input->post('telepon_vendor'),
+					// "header_vendor" => $gambar,
+				];
 				break;
 			case 'emtel':
-				$this->m_profil_biodataDiri->update_vendor_emailTelp($idV);
+				$data = [
+					"email_vendor" => $this->input->post('email_vendor'),
+					"hp_vendor" => $this->input->post('telepon_vendor'),
+				];
 				break;
 			case 'alamat':
-				$this->m_profil_biodataDiri->update_vendor_alamat($idV);
+				$data = [
+					"alamat_vendor" => $this->input->post('alamat_vendor'),
+				];
 				break;
 		}
+		$this->Model->update_vendor($idV, $data);
 		redirect('c_profil_biodataDiri/index/'.$idU);
 	}
 
-	public function tambah_vendor($id){
-		$this->m_profil_biodataDiri->update_vendor_status($id);
-		$idV = ($this->m_profil_biodataDiri->get_user($id))[0]['id_vendor'];
-		redirect('c_registerVendor/index/'.$idV.'/'.$id);
+	public function tambah_vendor($idU){
+		$idV = $this->Model->Get_Last('id_vendor', 'vendor');
+		$idV = $this->Model->Auto_IncrementId($idV);
+
+		redirect('c_registerVendor/index/'.$idV.'/'.$idU);
 	}
 
-	public function delete_vendor($id){
-		$idV = ($this->m_profil_biodataDiri->get_user($id))[0]['id_vendor'];
-		$this->m_profil_biodataDiri->delete_vendor($idV);
-		redirect('c_profil_biodataDiri/index/'.$id);
-	}
+	// public function delete_vendor($id){
+	// 	$idV = ($this->m_profil_biodataDiri->get_user($id))[0]->Get_Id_vendor();
+	// 	$this->m_profil_biodataDiri->delete_vendor($idV);
+		
+	// 	redirect('c_profil_biodataDiri/index/'.$id);
+	// }
+	
 }

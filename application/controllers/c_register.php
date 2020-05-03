@@ -5,7 +5,8 @@ class c_register extends CI_Controller {
 	
 	function __construct(){
 		parent::__construct();
-		$this->load->model('m_register');
+		// $this->load->model('m_register');
+		$this->load->model('class/Model');
 		$this->load->helper('url');
 	}
  
@@ -17,10 +18,17 @@ class c_register extends CI_Controller {
 	
 	public function tambahAkun(){
         if ($this->input->post('password', true) == $this->input->post('passwordKonf', true)) {
-			$this->m_register->insertAkun();
-			$id = $this->m_register->getLastId();
-			print_r($id);
-			redirect('c_profil_biodataDiri/index/'.$id);
+			$id = $this->Model->Get_Last('id_pelanggan', 'pelanggan');
+			$id = $this->Model->Auto_IncrementId($id);
+			$pelanggan = new Pelanggan(
+				$id,
+				$this->input->post('email'),
+				$this->input->post('password'),
+				$this->input->post('nama'),
+				date("Y-m-d")
+			);
+			$this->Model->Insert_Pelanggan($pelanggan);
+			redirect('c_profil_biodataDiri/index/'. $id );
         }else{
 			redirect('c_register/index/passSalah');
         }

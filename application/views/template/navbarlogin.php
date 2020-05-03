@@ -31,7 +31,7 @@
 
     <nav class="row navbar fixed-top navbar-expand-md navbar-dark bg-primary navbar-shadow">
             <div class="container-fluid">
-                <a href="<?= base_url()?>" class="navbar-brand ml-5">
+                <a href="<?php echo base_url(). 'C_Home/index/'.$pelanggan->Get_Id_pelanggan() ?>" class="navbar-brand ml-5">
                     <img class="d-flex align-items-center" src="<?= base_url() ?>assets/assets/images/title.svg" alt="logo SEVEN">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHome">
@@ -62,15 +62,28 @@
                         </li>
                         <div class="vr mx-3"></div>
                         <li class="nav-item mx-md-2">
-                            <a href="#" class="nav-link text-center pl-3 pr-5 icon-navbar">
-                                    <i class="fas fa-store"></i>
-                                    <span class=" ml-2 title-navbar">Vendor</span>
+                            <a href="<?php echo base_url(). 'c_profil_biodataDiri/index/'.$pelanggan->Get_Id_pelanggan().'/vendor' ;?>" class="nav-link text-center pl-3 pr-5 icon-navbar">
+                                <i class="fas fa-store"></i>
+                                <span class=" ml-2 title-navbar">
+                                    <?php 
+                                        if (!$pelanggan->Get_Id_vendor()) {
+                                            echo "Vendor";
+                                        }else{
+                                            echo $vendor->Get_Nama_vendor();
+                                        }
+                                    ?>
+                                </span>
                             </a>
                         </li>
                         <li class="nav-item mx-md-2">
-                            <a href="#" class="nav-link d-flex align-items-center pl-3 pr-5 icon-navbar">
+                            <a href="<?php echo base_url(). 'c_profil_biodataDiri/index/'.$pelanggan->Get_Id_pelanggan() ;?>" class="nav-link d-flex align-items-center pl-3 pr-5 icon-navbar">
                                 <img class="foto-profil" src="https://via.placeholder.com/50" alt="">
-                                <span class="ml-2 title-navbar">Nama User</span>
+                                <span class="ml-2 title-navbar"><?php echo $pelanggan->Get_Nama() ?></span>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-md-1">
+                            <a href="<?php echo base_url(). 'C_Home' ?>" class="nav-link d-flex align-items-center pl-3 pr-5 icon-navbar">
+                                <span class="ml-2 title-navbar">Logout</span>
                             </a>
                         </li>
                     </ul>

@@ -29,48 +29,175 @@ class Model extends CI_Model
     }
 
     // read
-    public function Get_Pelanggan($id = null){
-        if ($id) {
-            $this->db->where('id_pelanggan',$id);
+    public function Get_Pelanggan($Value=null, $Where=null, $sortBy=null, $limit=null, $order='DESC'){
+        if ($Value) {
+            if (!$Where) {
+                $Where = 'id_pelanggan';
+            }
+            $this->db->where($Where, $Value);
         }
-        $data = $this->db->get('pelanggan');
-        return $data->result_array();
+
+        if($sortBy){
+            $this->db->order_by($sortBy, $order);
+            $this->db->limit($limit);
+        }
+
+        $data = $this->db->get('pelanggan')->result_array();
+
+        $pelangganArray = [];
+        foreach ($data as $data) {
+            $pelanggan = new Pelanggan(
+                $data['id_pelanggan'],
+                $data['email'],
+                $data['password'],
+                $data['nama'],
+                $data['alamat'],
+                $data['no_hp'],
+                $data['tanggal_lahir'],
+                $data['jenis_kelamin'],
+                $data['last_update'],
+                $data['profile_image'],
+                $data['id_vendor'],
+                $data['deleted']
+            );
+            array_push($pelangganArray, $pelanggan);
+        }
+
+        return $pelangganArray;
     }
 
-    public function Get_Vendor($id = null){
-        if ($id) {
-            $this->db->where('id_vendor',$id);
+    public function Get_Vendor($Value=null, $Where=null, $sortBy=null, $limit=null, $order='DESC'){
+        if ($Value) {
+            if (!$Where) {
+                $Where = 'id_vendor';
+            }
+            $this->db->where($Where, $Value);
         }
-        $data = $this->db->get('vendor');
-        return $data->result_array();
+
+        if($sortBy){
+            $this->db->order_by($sortBy, $order);
+            $this->db->limit($limit);
+        }
+
+        $data = $this->db->get('vendor')->result_array();
+
+        $VendorArray = [];
+        foreach ($data as $data) {
+            $Vendor = new Vendor(
+                $data['id_vendor'],
+                $data['nama_vendor'],
+                $data['alamat_vendor'],
+                $data['daerah_vendor'],
+                $data['hp_vendor'],
+                $data['profile_img'],
+                $data['header_vendor'],
+                $data['deskripsi_vendor'],
+                $data['email_vendor'],
+                $data['deleted']
+            );
+            array_push($VendorArray, $Vendor);
+        }
+        return $VendorArray;
     }
 
-    public function Get_Transaksi($id = null){
-        if ($id) {
-            $this->db->where('id_transaksi',$id);
+    public function Get_Transaksi($Value=null, $Where=null, $sortBy=null, $limit=null, $order='DESC'){
+        if ($Value) {
+            if (!$Where) {
+                $Where = 'id_transaksi';
+            }
+            $this->db->where($Where, $Value);
         }
-        $data = $this->db->get('transaksi');
-        return $data->result_array();
+
+        if($sortBy){
+            $this->db->order_by($sortBy, $order);
+            $this->db->limit($limit);
+        }
+
+        $data = $this->db->get('transaksi')->result_array();
+
+        $TransaksiArray = [];
+        foreach ($data as $data) {
+            $Transaksi = new Transaksi(
+                $data['id_transaksi'],
+                $data['id_pelanggan'],
+                $data['id_barang'],
+                $data['tanggal_pembayaran'],
+                $data['tanggal_pemesanan'],
+                $data['deleted']
+            );
+            array_push($TransaksiArray, $Transaksi);
+        }
+        return $TransaksiArray;
     }
 
-    public function Get_Barang($id = null){
-        if ($id) {
-            $this->db->where('id_barang',$id);
+    public function Get_Barang($Value=null, $Where=null, $sortBy=null, $limit=null, $order='DESC'){
+        if ($Value) {
+            if (!$Where) {
+                $Where = 'id_barang';
+            }
+            $this->db->where($Where, $Value);
         }
-        $data = $this->db->get('barang');
-        return $data->result_array();
+
+        if($sortBy){
+            $this->db->order_by($sortBy, $order);
+            $this->db->limit($limit);
+        }
+
+        $data = $this->db->get('barang')->result_array();
+
+        $BarangArray = [];
+        foreach ($data as $data) {
+            $Barang = new Barang(
+                $data['id_barang'],
+                $data['id_vendor'],
+                $data['jenis'],
+                $data['nama'],
+                $data['stok'],
+                $data['harga_awal'],
+                $data['harga_akhir'],
+                $data['deskripsi'],
+                $data['date_upload'],
+                $data['foto'],
+                $data['rating'],
+                $data['deleted']
+            );
+            array_push($BarangArray, $Barang);
+        }
+        return $BarangArray;
     }
 
-    public function Get_Admin($id = null){
-        if ($id) {
-            $this->db->where('id_admin',$id);
+    public function Get_Admin($Value=null, $Where=null, $sortBy=null, $limit=null, $order='DESC'){
+        if ($Value) {
+            if (!$Where) {
+                $Where = 'id_admin';
+            }
+            $this->db->where($Where, $Value);
         }
-        $data = $this->db->get('admin');
-        return $data->result_array();
+
+        if($sortBy){
+            $this->db->order_by($sortBy, $order);
+            $this->db->limit($limit);
+        }
+
+        $data = $this->db->get('admin')->result_array();
+
+        $AdminArray = [];
+        foreach ($data as $data) {
+            $Admin = new Admin(
+                $data['id_admin'],
+                $data['nama'],
+                $data['alamat'],
+                $data['no_hp'],
+                $data['email'],
+                $data['password']
+            );
+            array_push($AdminArray, $Admin);
+        }
+        return $AdminArray;
     }
 
 
-    public function Get_LastId($id, $table){
+    public function Get_Last($id, $table){
         $this->db->select('max(' . $id . ')');
         $data = $this->db->get($table);
         $data = $data->result_array();
@@ -83,15 +210,6 @@ class Model extends CI_Model
         $arr[1] = sprintf('%03d', ($arr[1] + 1));
 
         return implode($arr);
-    }
-
-    public function Sort_By_Defined($sortBy, $table, $limit, $order='DESC'){
-        $this->db->where('deleted', 0);
-        $this->db->order_by($sortBy, $order);
-        $this->db->limit($limit);
-        $data = $this->db->get($table)->result_array();
-
-        return $data;
     }
 
     // Update

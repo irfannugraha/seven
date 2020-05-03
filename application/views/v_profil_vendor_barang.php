@@ -1,24 +1,6 @@
-<?php
-    defined('BASEPATH') OR exit('No direct script access allowed');
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/profil_vendor_daftarBarang.css">
-    <title><?php echo $judul?></title>
-    <style>
-        .form-group .form-control {
-	        color: black;
-        }
-    </style>
-</head>
-<body>
+
     <!-- Start: Registration Form with Photo -->
-    <div class="container">
+    <div class="container" style="padding-top: 100px;">
         <div class="row">
             <!-- Start: seven profil pict -->
             <div class="col-lg-auto profil-pict">
@@ -33,7 +15,7 @@
             <!-- End: seven profil pict -->
             <div class="col right">
                 <div>
-                    <div class="header-container"><span name="nama" style="line-height: 37px;">Daftar Produk dan Jasa</span></div>
+                    <div class="header-container"><span name="nama" style="line-height: 37px;">Daftar Produk</span></div>
                     <!-- Start: Form Container -->
                     <div class="form-container body-1">
                         <div>
@@ -66,16 +48,16 @@
                                                         <div class="custom-control custom-checkbox"><input class="custom-control-input checkboxlistitem" type="checkbox" id="formCheck-<?php echo $i ?>"><label class="custom-control-label" for="formCheck-<?php echo $i ?>"></label></div>
                                                     </div>
                                                     <div class="col-xl-4 mr-2">
-                                                        <h6 class="mb-0"><strong><?php echo $barang['nama'] ?></strong></h6>
+                                                        <h6 class="mb-0"><strong><?php echo $barang->Get_Nama() ?></strong></h6>
                                                     </div>
                                                     <div class="col mr-2">
-                                                        <h6 class="mb-0"><strong>Rp&nbsp;</strong><span><?php echo $barang['harga'] ?></span></h6>
+                                                        <h6 class="mb-0"><strong>Rp&nbsp;</strong><span><?php echo $barang->Get_Harga_awal() ?></span></h6>
                                                     </div>
                                                     <div class="col mr-2">
-                                                        <h6 class="mb-0"><strong>Rp&nbsp;</strong><span><?php echo $barang['harga'] * $barang['stok'] ?></span></h6>
+                                                        <h6 class="mb-0"><strong>Rp&nbsp;</strong><span><?php echo $barang->Get_Harga_akhir()?></span></h6>
                                                     </div>
                                                     <div class="col-1 mr-2 stok">
-                                                        <h6 class="mb-0"><strong><?php echo $barang['stok'] ?></strong></h6>
+                                                        <h6 class="mb-0"><strong><?php echo $barang->Get_Stok() ?></strong></h6>
                                                     </div>
                                                     <div class="col-2 mr-2">
                                                         <!-- Start: Basic Modal Button --><button class="btn btn-light" data-toggle="modal" data-target="#modal1" type="button">Edit</button>
@@ -88,21 +70,27 @@
                                                                         <h2 class="modal-title">Edit produk atau jasa</h2><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                                                                     <div class="modal-body">
                                                                         <!-- Start: seven form -->
-                                                                        <form method="post" action="<?php echo base_url(). 'c_profil_vendor_barang/updateBarang/'. $barang['id_barang'] ?>">
+                                                                        <form method="post" action="<?php echo base_url(). 'c_profil_vendor_barang/updateBarang/'. $barang->Get_Id_barang() .'/'.$pelanggan->Get_Id_pelanggan().'/'.$pelanggan->Get_Id_vendor() ?>">
                                                                             <div class="form-group"><label class="form-label">Foto&nbsp;</label><input type="file" class="form-file" name="fotoBarang"></div>
-                                                                            <div class="form-group"><label class="form-label">Nama</label><input class="form-control" type="text" value="<?php echo $barang['nama'] ?>" placeholder="Nama anda" style="background-repeat: no-repeat;" name="namaBarang"></div>
-                                                                            <div class="form-group"><label class="form-label">Harga&nbsp;</label><input class="form-control" type="text" value="<?php echo $barang['harga'] ?>" placeholder="Nama anda" style="background-repeat: no-repeat;" name="hargaBarang"></div>
-                                                                            <div class="form-group"><label class="form-label">Deskripsi</label><textarea class="form-control" value="<?php echo $barang['deskripsi'] ?>" placeholder="deskripsi barang anda" name="deskBarang"></textarea></div>
-                                                                    <div class="form-group"><label class="form-label">Stok</label><input class="form-control" type="text" value="<?php echo $barang['stok'] ?>" placeholder="Nama anda" style="background-repeat: no-repeat;" name="stokBarang"></div>
-                                                                    <div class="form-group"><button class="btn btn-primary btn-block" style="height: 40px;margin-top: 10px;" type="submit">Simpan</button></div>
-                                                                    </form>
+                                                                            <div class="form-group"><label class="form-label">Nama</label><input class="form-control" type="text" value="<?php echo $barang->Get_Nama() ?>" placeholder="Nama barang" style="background-repeat: no-repeat;" name="nama"></div>
+                                                                            <div class="form-group"><label class="form-label">Harga&nbsp;</label><input class="form-control" type="text" value="<?php echo $barang->Get_Harga_awal() ?>" placeholder="Harga barang" style="background-repeat: no-repeat;" name="harga_awal"></div>
+
+                                                                            <div class="form-group"><label class="form-label">Jenis</label><input class="form-control" type="text" value="<?php echo $barang->Get_Jenis() ?>" placeholder="Jenis barang" style="background-repeat: no-repeat;" name="jenis"></div>
+
+                                                                            <div class="form-group"><label class="form-label">Deskripsi</label><textarea class="form-control" value="<?php echo $barang->Get_Deskripsi() ?>" placeholder="deskripsi barang anda" name="deskripsi"></textarea></div>
+                                                                            <div class="form-group"><label class="form-label">Stok</label><input class="form-control" type="text" value="<?php echo $barang->Get_Stok() ?>" placeholder="Stok barang" style="background-repeat: no-repeat;" name="stok"></div>
+
+                                                                            <div class="form-group"><button class="btn btn-primary btn-block" style="height: 40px;margin-top: 10px;" type="submit">Simpan</button></div>
+
+                                                                            
+                                                                        </form>
                                                                     <!-- End: seven form -->
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <!-- End: seven modal-1 -->
-                                                    <a href="<?php echo base_url(). "c_profil_vendor_barang/deleteBarang/". $barang['id_barang'] ?>"><button class="btn btn-danger" type="button">Hapus</button></a></div>
+                                                    <a href="<?php echo base_url(). "c_profil_vendor_barang/deleteBarang/". $barang->Get_Id_barang() .'/'.$pelanggan->Get_Id_pelanggan().'/'.$pelanggan->Get_Id_vendor() ?>"><button class="btn btn-danger" type="button">Hapus</button></a></div>
                                                 </div>
                                             </li>
                                             <?php endforeach ?>
@@ -115,7 +103,8 @@
                 </div>
                 <!-- End: Form Container -->
                 <div class="form-footer">
-                    <!-- Start: Basic Modal Button --><button class="btn btn-primary float-left" data-toggle="modal" data-target="#modalTambah" type="button"><i class="icon ion-plus"></i>&nbsp; Tambah Barang</button>
+                    <!-- Start: Basic Modal Button -->
+                    <button class="btn btn-primary float-left" data-toggle="modal" data-target="#modalTambah" type="button">Tambah Barang</button>
                     <!-- End: Basic Modal Button -->
                     <!-- Start: seven modal-1 -->
                     <div class="modal fade" role="dialog" tabindex="-1" id="modalTambah">
@@ -125,12 +114,16 @@
                                     <h2 class="modal-title">Tambah Produk atau Jasa</h2><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                                 <div class="modal-body">
                                     <!-- Start: seven form -->
-                                    <form method="post" action="<?php echo base_url(). 'c_profil_vendor_barang/insertBarang'; ?>">
-                                        <div class="form-group"><label class="form-label">Foto&nbsp;</label><input type="file" class="form-file" id="fotoBarang"></div>
-                                        <div class="form-group"><label class="form-label">Nama</label><input class="form-control" type="text" placeholder="Nama barang" style="background-repeat: no-repeat;" name="namaBarang"></div>
-                                        <div class="form-group"><label class="form-label">Harga&nbsp;</label><input class="form-control" type="text" placeholder="Harga barang" style="background-repeat: no-repeat;" name="hargaBarang"></div>
-                                        <div class="form-group"><label class="form-label">Deskripsi</label><textarea class="form-control" placeholder="Deskripsi barang" name="deskBarang"></textarea></div>
-                                        <div class="form-group"><label class="form-label">Stok</label><input class="form-control" type="text" placeholder="Stok yang tersedia" style="background-repeat: no-repeat;" name="stokBarang"></div>
+                                    <form method="post" action="<?php echo base_url(). 'c_profil_vendor_barang/insertBarang/'.$pelanggan->Get_Id_pelanggan().'/'.$pelanggan->Get_Id_vendor(); ?>">
+                                        <div class="form-group"><label class="form-label">Foto&nbsp;</label><input type="file" class="form-file" id="foto"></div>
+                                        <div class="form-group"><label class="form-label">Nama</label><input class="form-control" type="text" placeholder="Nama barang" style="background-repeat: no-repeat;" name="nama"></div>
+                                        <div class="form-group"><label class="form-label">Harga&nbsp;</label><input class="form-control" type="text" placeholder="Harga barang" style="background-repeat: no-repeat;" name="harga_awal"></div>
+
+                                        <div class="form-group"><label class="form-label">Jenis&nbsp;</label><input class="form-control" type="text" placeholder="Jenis barang" style="background-repeat: no-repeat;" name="jenis"></div>
+
+                                        <div class="form-group"><label class="form-label">Deskripsi</label><textarea class="form-control" placeholder="Deskripsi barang" name="deskripsi"></textarea></div>
+                                        <div class="form-group"><label class="form-label">Stok</label><input class="form-control" type="text" placeholder="Stok yang tersedia" style="background-repeat: no-repeat;" name="stok"></div>
+
                                         <div class="form-group"><button class="btn btn-primary btn-block" style="height: 40px;margin-top: 10px;" type="submit">Simpan</button></div>
                                     </form>
                                     <!-- End: seven form -->
@@ -145,8 +138,3 @@
     </div>
     </div>
     <!-- End: Registration Form with Photo -->
-    <script src="<?php echo base_url()?> assets/js/jquery.min.js"></script>
-    <script src="<?php echo base_url()?> assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url()?> assets/js/script.min.js"></script>
-</body>
-</html>

@@ -9,15 +9,13 @@
 
                     <div class="col-md-auto p-0 gambarProduk" id="imgProduk">
                         <div class="gambarDetail" style="height: 60%;">
-                            <img class="img-thumbnail" src="<?= $detailBarang['produk_img']['url_image']?>" alt="GambarProduk" id="show-img">
+                            <img class="img-thumbnail" src="<?= $detailBarang->Get_Foto() ?>" alt="GambarProduk" id="show-img">
                         </div>
                         <div class="small-img">
                             <img class="icon-left" src="<?= base_url() ?>assets/assets/images/Produk/next-icon.png" alt="" id="prev-img">
                                 <div class="small-container">
                                     <div class="small-img-roll">
-                                        <?php foreach ($detailBarang['produk_img'] as $img) : ?>
-                                        <img src="<?= $img['foto'] ?>" alt="" class="show-small-img">
-                                        <?php endforeach ; ?>
+                                        <img src="<?= $detailBarang->Get_Foto() ?>" alt="" class="show-small-img">
                                     </div>
                                 </div>
                             <img class="icon-right" src="<?= base_url() ?>assets/assets/images/Produk/next-icon.png" alt="" id="next-img">
@@ -29,24 +27,17 @@
                     <!-- Detail Produk -->
 
                     <div class="col-md-5 ml-4 p-0 toBottom detailedProduk">
-                        <h2 class="titleProduk mb-2"><?= $detailBarang['nama'] ?></h2>
-                        <?php $n = 5 - $detailBarang['jumlahRating'] ?>
+                        <h2 class="titleProduk mb-2"><?= $detailBarang->Get_Nama() ?></h2>
                         <div class="rating mb-2 d-flex align-items-center">
-                            <?php if ($detailBarang['jumlahRating'] > 0) : ?>
                                 <i class="fas fa-star float-left ml-0 starRating"></i>
-                            <?php endif ; ?>
-                            <?php for ($i = 1; $i < $detailBarang['jumlahRating']; $i++) : ?>
                             <i class="fas fa-star float-left starRating"></i>
-                            <?php endfor ; ?>
-                            <?php for ($i = 0; $i < $n; $i++) : ?>
                             <i class="fas fa-star float-left starRating star5"></i>
-                            <?php endfor ; ?>
-                            <span class="ml-2 my-auto ratingCount">(<?= $detailBarang['jumrating'] ?>)</span>
+                            <span class="ml-2 my-auto ratingCount">(<?= $detailBarang->Get_Rating() ?>)</span>
                         </div>
-                        <h2 class="hargaProduk mb-2">Rp <?= number_format($detailBarang['harga_awal'],0,".",".") ?> - Rp <?= number_format($detailBarang['harga_akhir'],0,".",".") ?></h2>
+                        <h2 class="hargaProduk mb-2">Rp <?= number_format($detailBarang->Get_Harga_awal(),0,".",".") ?> - Rp <?= number_format($detailBarang->Get_Harga_akhir(),0,".",".") ?></h2>
                         <div class="mb-2 d-flex align-items-center">
                             <img class="iconPlace" src="<?= base_url() ?>assets/assets/images/icon_place.svg" alt="Place"> 
-                            <span class="vendorplace ml-1"><?= $detailBarang['vendorPlace'] ?></span>
+                            <span class="vendorplace ml-1"><?= $detailVendor->Get_Daerah_vendor() ?></span>
                         </div>
                         <div class="row mt-5 amountDetail">
                             <div class="col-md-5">
@@ -77,7 +68,7 @@
                                                 -
                                             </button>
                                         </div>
-                                        <input type="number" id="jumlahProduk" class="form-control px-2 text-center" min="1" max="<?= $detailBarang['stok'] ?>" value="1" aria-describedby="incdecJumlahProduk">
+                                        <input type="number" id="jumlahProduk" class="form-control px-2 text-center" min="1" max="<?= $detailBarang->Get_Stok() ?>" value="1" aria-describedby="incdecJumlahProduk">
                                         <div class="input-group-append">
                                             <button class="btn btn-dec px-3 py-1" onclick="document.getElementById('jumlahProduk').stepUp()" id="incdecJumlahProduk">
                                                 +
@@ -112,16 +103,16 @@
                     <div class="col-md-3 ml-4">
                         <div class=" px-3 py-3 kotakVendor">
                             <h4 class="mb-3">Vendor</h4>
-                            <a href="<?= base_url(); ?>profilevendor/index/<?= $detailBarang['id_vendor'] ?>" class="nav-link p-0">
+                            <a href="<?= base_url(); ?>profilevendor/index/<?= $detailVendor->Get_Id_vendor() ?>" class="nav-link p-0">
                                 <div class="row profileVendorLeft">
                                     <div class="col-md-auto pr-0">
-                                        <img class="foto-profil-vendor" src="<?= $detailBarang['vendorImg'] ?>" alt="">
+                                        <img class="foto-profil-vendor" src="<?= base_url() ?>assets/assets/images/profileVendor.png" alt="">
                                     </div>
                                     <div class="col-md-auto mt-1">
-                                        <p class="mb-1"><?= $detailBarang['vendorName'] ?></p>
+                                        <p class="mb-1"><?= $detailVendor->Get_Nama_vendor() ?></p>
                                         <div class="mb-2 d-flex align-items-center">
                                             <img class="iconPlace" src="<?= base_url() ?>assets/assets/images/icon_place.svg" alt="Place"> 
-                                            <span class="vendorplace ml-1"><?= $detailBarang['vendorPlace'] ?></span>
+                                            <span class="vendorplace ml-1"><?= $detailVendor->Get_Daerah_vendor() ?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -146,7 +137,7 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane mt-4 fade show active" id="infoProduk" role="tabpanel">
-                        <span><?= nl2br($detailBarang['deskripsi']) ?></span>
+                        <span><?= nl2br($detailBarang->Get_Deskripsi()) ?></span>
                     </div>
                 </div>
             </div>
