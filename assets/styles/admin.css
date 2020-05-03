@@ -1,0 +1,33 @@
+@media (min-width:992px) {
+  .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .col-auto {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-auto {
+    margin-right: 10px;
+  }
+}
+
+@media (min-width:360px) {
+  .d-lg-inline {
+    display: inline!important;
+  }
+}
+
+#scroll-to-top {
+  visibility: hidden;
+}
+
+.col-auto .remove-icon:hover {
+  color: red;
+}
+

@@ -1,0 +1,152 @@
+@import "base";
+
+@mixin font-color($color_text, $font_text, $fosize) {
+    font-family: $font_text;
+    font-size: $fosize;
+    color: $color_text;
+}
+
+@mixin h3-font($font_text, $fosize, $mar_bot) {
+    font-size: $fosize;
+    font-family: $font_text;
+    margin-bottom: $mar_bot;
+}
+
+@mixin BgImage {
+    background-position: center;
+    background-size: cover;    
+}
+
+@mixin arrow-slider {
+    width: 12px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.profileVendor {
+    .sampulVendor {
+        margin-top: 22px;
+        height: 300px;
+        overflow: hidden;
+        background-size: cover;
+    }
+    .foto-profil-vendor {
+        border-radius: 100px;
+        height: 125px;
+        width: 125px;
+    }
+    h3 {
+        @include font-color($dark_color, $font-footer-h3, 1.7rem);
+        margin-bottom: 0.5rem;
+    }
+    p {
+        @include font-color($dark_color, $font-placeholder, 1.2rem);
+        line-height: 1.3em;
+    }
+    .iconPlace {
+        width: 5%;
+        height: 5%;
+    }
+    .vendorplace {
+        line-height: 1.3em;
+        @include font-color($dark-color, $font-placeholder, 1.1em);
+    }
+    .vr {
+        border-left: 1px solid $dark-color; 
+        height: 1.2rem;
+    }
+    .followers {
+        line-height: 1.3em;
+        @include font-color($dark-color, $font-kategori-h3, 1.1em);
+    }
+    .buttonProfileVendor {
+        border-left: 1px solid #C7C7C7;
+    }
+    .btn-follow{
+        width: 40%;
+        background-color: $primary-color;
+        @include font-color($light_color, $font-navlink, 1em);
+        &:hover {
+            background-color: rgb(68, 47, 189);
+            color: $light_color;
+    }
+    }
+    .btn-infovendor {
+        width: 40%;
+        background-color: #F5F5F5;
+        border: 1px solid #C7C7C7;
+        @include font-color($dark-color, $font-navlink, 1em);
+        &:hover {
+            background-color: rgb(206, 206, 206);
+    }
+    }
+}
+
+.infoProdukVendor {
+    .input-group {   
+        width: 70% !important;
+    }
+    .btn-search {
+        background-color: transparent;
+        border: 1px solid #666666;
+        border-left: none;
+    }
+    .form-control {
+        border-right: none;
+        border-left-color: #666666;
+        border-top-color: #666666;
+        border-bottom-color: #666666;
+        &:focus {
+            border-color: #666666;
+        }
+    }
+    .urutkan {
+        text-align: right;
+        @include font-color($dark-color, $font-footer-h3, 1.2em);
+    }
+    select.form-control {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -o-appearance: none;
+    }
+    select + i.fa {
+        float: right;
+        margin-top: -25px;
+        margin-right: 10px;
+        /* this is so when you click on the chevron, your click actually goes on the dropdown menu */
+        pointer-events: none;
+        /* everything after this is just to cover up the original arrow */
+        /* (for browsers that don't support the syntax used above) */
+        background-color: #fff;
+        padding-right: 5px;
+    }
+    .selectSort {
+        border: 1px solid #666666;
+        @include font-color($dark_color, $font-button, 1.0em);
+    }
+}
+
+.pagination{
+    .page-item {
+        &.disabled{
+            .page-link{
+                color: #7B7B7B;
+                background-color: #D5D5D5;
+            }
+        }
+        &.active {
+            .page-link{
+                color: #7B7B7B;
+                background-color: #D5D5D5;
+                border-color: #dee2e6;
+            }
+        }
+        .page-link{
+            @include font-color($primary-color, $font-placeholder, 1.2em);
+        }
+    }
+}

@@ -1,0 +1,196 @@
+@font-face {
+  src: url(../assets/font/Mermaid/Mermaid.ttf);
+  font-family: Mermaid;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-Light.otf);
+  font-family: MazzardMLight;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardH-Regular.otf);
+  font-family: MazzardHRegular;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardH-Medium.otf);
+  font-family: MazzardHMedium;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-Medium.otf);
+  font-family: MazzardMMedium;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-Regular.otf);
+  font-family: MazzardMRegular;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-SemiBold.otf);
+  font-family: MazzardMSemiBold;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardL-Regular.otf);
+  font-family: MazzardLRegular;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardL-Light.otf);
+  font-family: MazzardLLight;
+}
+
+.profileVendor .sampulVendor {
+  margin-top: 22px;
+  height: 300px;
+  overflow: hidden;
+  background-size: cover;
+}
+
+.profileVendor .foto-profil-vendor {
+  border-radius: 100px;
+  height: 125px;
+  width: 125px;
+}
+
+.profileVendor h3 {
+  font-family: MazzardMSemiBold;
+  font-size: 1.7rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.profileVendor p {
+  font-family: MazzardMLight;
+  font-size: 1.2rem;
+  color: #000000;
+  line-height: 1.3em;
+}
+
+.profileVendor .iconPlace {
+  width: 5%;
+  height: 5%;
+}
+
+.profileVendor .vendorplace {
+  line-height: 1.3em;
+  font-family: MazzardMLight;
+  font-size: 1.1em;
+  color: #000000;
+}
+
+.profileVendor .vr {
+  border-left: 1px solid #000000;
+  height: 1.2rem;
+}
+
+.profileVendor .followers {
+  line-height: 1.3em;
+  font-family: MazzardMMedium;
+  font-size: 1.1em;
+  color: #000000;
+}
+
+.profileVendor .buttonProfileVendor {
+  border-left: 1px solid #C7C7C7;
+}
+
+.profileVendor .btn-follow {
+  width: 40%;
+  background-color: #5741D9;
+  font-family: MazzardHRegular;
+  font-size: 1em;
+  color: #FFFFFF;
+}
+
+.profileVendor .btn-follow:hover {
+  background-color: #442fbd;
+  color: #FFFFFF;
+}
+
+.profileVendor .btn-infovendor {
+  width: 40%;
+  background-color: #F5F5F5;
+  border: 1px solid #C7C7C7;
+  font-family: MazzardHRegular;
+  font-size: 1em;
+  color: #000000;
+}
+
+.profileVendor .btn-infovendor:hover {
+  background-color: #cecece;
+}
+
+.infoProdukVendor .input-group {
+  width: 70% !important;
+}
+
+.infoProdukVendor .btn-search {
+  background-color: transparent;
+  border: 1px solid #666666;
+  border-left: none;
+}
+
+.infoProdukVendor .form-control {
+  border-right: none;
+  border-left-color: #666666;
+  border-top-color: #666666;
+  border-bottom-color: #666666;
+}
+
+.infoProdukVendor .form-control:focus {
+  border-color: #666666;
+}
+
+.infoProdukVendor .urutkan {
+  text-align: right;
+  font-family: MazzardMSemiBold;
+  font-size: 1.2em;
+  color: #000000;
+}
+
+.infoProdukVendor select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+}
+
+.infoProdukVendor select + i.fa {
+  float: right;
+  margin-top: -25px;
+  margin-right: 10px;
+  /* this is so when you click on the chevron, your click actually goes on the dropdown menu */
+  pointer-events: none;
+  /* everything after this is just to cover up the original arrow */
+  /* (for browsers that don't support the syntax used above) */
+  background-color: #fff;
+  padding-right: 5px;
+}
+
+.infoProdukVendor .selectSort {
+  border: 1px solid #666666;
+  font-family: MazzardMRegular;
+  font-size: 1em;
+  color: #000000;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #7B7B7B;
+  background-color: #D5D5D5;
+}
+
+.pagination .page-item.active .page-link {
+  color: #7B7B7B;
+  background-color: #D5D5D5;
+  border-color: #dee2e6;
+}
+
+.pagination .page-item .page-link {
+  font-family: MazzardMLight;
+  font-size: 1.2em;
+  color: #5741D9;
+}
+/*# sourceMappingURL=profile.css.map */

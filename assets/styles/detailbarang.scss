@@ -1,0 +1,224 @@
+@import "base";
+
+@mixin font-color($color_text, $font_text, $fosize) {
+    font-family: $font_text;
+    font-size: $fosize;
+    color: $color_text;
+}
+
+@mixin h3-font($font_text, $fosize, $mar_bot) {
+    font-size: $fosize;
+    font-family: $font_text;
+    margin-bottom: $mar_bot;
+}
+
+@mixin BgImage {
+    background-position: center;
+    background-size: cover;    
+}
+
+@mixin arrow-slider {
+    width: 12px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+// detailBarang
+.gambarProduk {
+    width: 325px;
+    .img-thumbnail {
+        width: 100%;
+    }
+    .small-img {
+        height: 50px;
+        margin: 10px 0px;
+        position: relative;
+        .icon-left {
+            @include arrow-slider();
+            transform: rotate(180deg);
+            &:hover{
+                opacity: .5;
+            }
+        }
+        .icon-right {
+            @include arrow-slider();
+            right: 0;
+            &:hover{
+                opacity: .5;
+            }
+        }
+    }
+    .small-container {
+        width: 300px;
+        height: 50px;
+        overflow: hidden;
+        position: absolute;
+        left: 10;
+        right: 0;
+        margin: 0 auto;
+        div {
+            width: 800%;
+            position: relative;
+        }
+        .show-small-img {
+            width: 50px;
+            height: 50px;
+            margin-right: 6px;
+            cursor: pointer;
+            float: left;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+// detailed barang
+.detailedProduk {
+    .titleProduk {
+        @include h3-font($font-h-medium, 1.5em, 0);
+        line-height: 28px;
+        max-height: 56px;
+        word-wrap: break-word;
+    }
+    .rating{
+        .starRating {
+            font-size: 1.1em;
+            margin-left: 3px;
+            color: $gold-color;
+        }
+        .star5 {
+            color: $gray-color !important;
+        }
+        .ratingCount {
+            @include font-color($dark-color, $font-placeholder, 1.1em);
+        }
+    }
+    .hargaProduk {
+        line-height: 1.3em;
+        @include font-color($red-color, $font-kategori-h3, 2em);
+    }
+    .iconPlace {
+        width: 5%;
+        height: 5%;
+    }
+    .vendorplace {
+        line-height: 1.3em;
+        @include font-color($gray-color, $font-placeholder, 1.3em);
+    }
+}
+
+.amountDetail {
+    p {
+        @include font-color($dark_color, $font-button, 1em);
+    }
+    .input-group {   
+        width: 80% !important;
+        .form-control{
+            height: auto;
+        }
+    }
+    span{
+        @include font-color($dark_color, $font-button, 1.2em);
+    }
+}
+
+.catatanUser{
+    .labelCatatan{
+        @include font-color($dark_color, $font-button, 1em);
+    }
+    textarea {
+        resize: none;
+    }
+    .form-control{
+        width: 84%;
+    }
+}
+
+.btn-inc, .btn-dec {
+    background-color: #F1F1F1;
+    border: 1px solid #C4C4C4;
+    @include font-color($dark_color, $font-button, 1.2em);
+    &:focus {
+        box-shadow: 0 0 0 0.1rem rgba(70, 71, 71, 0.1);
+    }
+}
+
+.btn-sewa{
+    background-color: #2AC956;
+    @include font-color($light_color, $font-button, 1em);
+    &:hover {
+        background-color: rgb(53, 170, 86);
+        color: $light_color;
+    }
+}
+
+.btn-addCart{
+    background-color: $light_color;
+    @include font-color($primary-color, $font-button, 1em);
+    border: 1px solid $primary-color;
+    &:hover {
+        background-color: $primary-color;
+        color: $light_color;
+    }
+}
+
+.kotakVendor{
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #C4C4C4;
+    h4{
+        @include font-color($gray-color, $font-button, 1.1em);
+    }
+    a {
+        text-decoration: none;
+        @include font-color($dark-color, $font-kategori-h3, 0.8em);
+        .foto-profil-vendor {
+            border-radius: 50px;
+            height: 50px;
+            width: 50px;
+        }
+    }
+    .profileVendorLeft{
+        .iconPlace {
+            width: 15%;
+            height: 15%;
+        }
+        .vendorplace {
+            @include font-color($gray-color, $font-placeholder, 0.9em);
+        }
+    }
+}
+
+.nav-tabs {
+    .nav-link {
+        border: none;
+        border-bottom:2px solid transparent;
+        @include font-color(#7B7B7B, $font-footer-h3, 1.3em);
+        &:hover{
+            color: $primary-color;
+            border: none;
+        }
+        &.active {
+            color: $primary-color;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom:2px solid #5741D9;
+        }
+    }
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+        appearance: textfield;
+}
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    }

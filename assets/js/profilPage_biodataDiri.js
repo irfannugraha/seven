@@ -1,0 +1,1 @@
+$(function(){$("#upload_link").on("click",function(n){n.preventDefault(),$("#upload:hidden").trigger("click")})});

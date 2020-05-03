@@ -1,0 +1,227 @@
+.btn.btn-outline-primary.facebook,
+.btn.btn-outline-primary.google {
+	background-size: 15px;
+	background-repeat: no-repeat;
+	background-position: 30px center
+}
+
+.form-group {
+	box-sizing: border-box;
+	margin-bottom: 20px
+}
+
+.form-group .form-control {
+	border: 1px solid
+}
+
+form .btn {
+	border-radius: 10px;
+	padding: 10px 40px;
+	box-shadow: none;
+	text-shadow: none;
+	outline: 0 !important
+}
+
+form .btn-primary:active {
+	transform: translateY(1px)
+}
+
+form .form-label {
+	font-size: 15px;
+	line-height: 26px
+}
+
+.separator {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	font-size: 13px
+}
+
+.separator::after,
+.separator::before {
+	content: '';
+	flex: 1;
+	border-bottom: 1px solid #5C5C5C
+}
+
+.separator::before {
+	margin-right: 1em
+}
+
+.separator::after {
+	margin-left: 1em
+}
+
+.btn.btn-outline-primary {
+	color: #000;
+	border: 1px solid #666
+}
+
+.btn.btn-outline-primary.google:hover {
+	background-image: url(../../assets/img/flat-color-icons_google.png)
+}
+
+.btn.btn-outline-primary.google {
+	background-image: url(../../assets/img/logo-gmail.png)
+}
+
+.btn.btn-outline-primary.facebook {
+	background-image: url(../../assets/img/logo-facebook.png)
+}
+
+.btn.btn-outline-primary.facebook:hover {
+	background-image: url(../../assets/img/logos-facebook.png)
+}
+
+.btn.btn-outline-primary:hover {
+	color: #fff
+}
+
+.form-container {
+	background: #FFF;
+	border: 1px solid #C7C7C7;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin-bottom: 40px
+}
+
+.container {
+	width: 80%
+}
+
+.register .form-container {
+	display: table;
+	border-radius: 5px;
+	width: 100%
+}
+
+.tab-content {
+	padding: 20px
+}
+
+.informasi .card-body {
+	padding: 20px 0 0
+}
+
+.card.mb-3 {
+	display: block
+}
+
+.card.mb-2 {
+	display: flex;
+	flex: 1
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active:hover {
+	color: #5741D9;
+	background-color: #fff;
+	border-color: #fff;
+	border-bottom: 5px solid #5741D9
+}
+
+a:hover {
+	color: #5741D9;
+	text-decoration: none
+}
+
+a {
+	color: #7B7B7B
+}
+
+.card-header {
+	padding: 0;
+	margin-bottom: 0;
+	background-color: #fff;
+	border-bottom: 1px solid rgba(0, 0, 0, .125)
+}
+
+.card,
+.header-container,
+.informasi h6,
+.informasi span {
+	padding-bottom: 20px
+}
+
+.card {
+	border: 0
+}
+
+.informasi span {
+	display: block;
+	line-height: 1.2
+}
+
+.informasi h6 {
+	font-size: 1rem;
+	margin-bottom: 0
+}
+
+.btn-primary {
+	display: inline;
+	float: right;
+	height: 30px;
+	line-height: 0;
+	background-color: #5741D9;
+	border: 0
+}
+
+.h4,
+h4 {
+	display: inline-block
+}
+
+.header-container {
+	padding-top: 40px
+}
+
+body {
+	background-color: #F6F6F6
+}
+
+.card-body.text-center {
+	background-color: #dcdcdc;
+	padding: 0 20px 20px;
+	border-radius: 10px
+}
+
+.informasi .col,
+.informasi .col-lg-3 {
+	padding: 0
+}
+
+#tab-1 span.d-block {
+	font-style: italic
+}
+
+.header-container span {
+	margin-left: 20px
+}
+
+.foto-header-vendor,
+.informasi img {
+	margin-bottom: 20px;
+	border-radius: 10px
+}
+
+.modal-header {
+	padding: 40px 40px 0;
+	border-bottom: 0;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px
+}
+
+.modal-body {
+	padding: 1rem 40px 40px
+}
+
+.btn-primary:hover {
+	background-color: #36278f
+}
+
+.form-file {
+	border: 1px solid;
+	border-radius: 5px
+}

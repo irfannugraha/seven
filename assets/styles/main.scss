@@ -1,0 +1,399 @@
+@import "base";
+
+@mixin font-color($color_text, $font_text, $fosize) {
+    font-family: $font_text;
+    font-size: $fosize;
+    color: $color_text;
+}
+
+@mixin h3-font($font_text, $fosize, $mar_bot) {
+    font-size: $fosize;
+    font-family: $font_text;
+    margin-bottom: $mar_bot;
+}
+
+@mixin BgImage {
+    background-position: center;
+    background-size: cover;    
+}
+
+@mixin arrow-slider {
+    width: 12px;
+    height: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+/* Navbar */
+
+.navbar-shadow {
+    box-shadow: 0px 2px 0.5rem 0rem rgba(0, 0, 0, 0.3);
+}
+
+.bg-primary {
+    background-color: $primary-color !important;
+}
+
+.navbar-brand {
+    img {
+        max-height: 24px;
+    }
+}
+
+.input-group {   
+    width: 650px !important;
+}
+
+.input-group-append{
+    .btn {
+        img{
+            max-width: 25px;
+        }
+    }
+}
+
+.form-control{
+    font-family: $font-placeholder;
+    &::placeholder{
+        color: #0D0C52;
+        opacity: 0.5;
+    }
+}
+
+.form-control, .btn {
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.btn-search{
+    background-color: #C4C4C4;
+}
+
+.navbar-dark {
+    .navbar-nav {
+        .nav-link {
+            @include font-color($light_color, $font-navlink, 1.1rem);
+            img {
+                height: 24px;
+                width: 24px;
+            }
+        }
+    }
+}
+
+.icon-navbar {
+    &:hover {
+        background-color: $primary-color-dark; 
+        border-radius: 5px;
+        i {
+            color: $primary-color;
+        }
+    }
+}
+
+.vr {
+    border-left: 2px solid #0D0C52; 
+    height: 40px;
+}
+
+.btn-login{
+    @include font-color($light_color, $font-navlink, 1.1rem);
+
+    &:hover {
+        color: $primary-color;
+        background-color: #FFFFFF;
+        border-radius: 5px;
+    }
+}
+
+.btn-register {
+    @include font-color($dark_color, $font-navlink, 1.1rem);
+    background-color: #FFFFFF;
+    border-radius: 5px;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+
+.title-navbar {
+    margin-top: 1px;
+    @include font-color($light_color, $font-navlink, 1.1rem);
+}
+
+.foto-profil{
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+/* Carousel */
+.info-panel {
+    margin-top: 70px;
+}
+
+.kolom {
+    margin-top: 28px;
+}
+
+.carouselItem {
+    width: 600px;
+    height: 300px;
+    font-size: 4rem;
+    border-radius: 20px;
+    background-color: grey;
+}
+
+
+* {
+box-sizing: border-box;
+}
+
+.slider {
+    width: 100%;
+    // margin: 100px auto;
+}
+
+.slick-slide {
+margin: 0px 20px;
+}
+
+.slick-slide {
+    img {
+        width: 600px;
+        height: 300px;
+    }
+}
+
+.slick-prev:before,
+.slick-next:before {
+color: black;
+}
+
+
+.slick-slide {
+transition: all ease-in-out .3s;
+opacity: .2;
+}
+
+.slick-active {
+opacity: .5;
+}
+
+.slick-current {
+opacity: 1;
+}
+
+.slick-dots {
+    bottom: 10px;
+}
+
+// kategori
+.kotakKategori {
+    padding: 32px 50px 19px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px #ccc;
+    h3 {
+        @include h3-font($font-kategori-h3, 1.5em, 2rem);
+    }
+    .link-kategori {
+        width: 100px;
+        font-family: $font-item-kategori;
+        margin-right: 36px;
+        margin-bottom: 18px;
+        color: black;
+        text-decoration: none;
+        img{
+            height: 48px;
+            width: 48px;
+        }
+        h5{
+            margin-top: 5px;
+        }
+    }
+}
+
+
+// list produk
+.titleGroup {
+    h2 {
+        margin-top: 28px;
+        @include h3-font($font-footer-h3, 2em, 1.5rem);
+    }
+}
+
+.kotakProduk {
+    width: 225px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px #ccc;
+    margin-right: 28px;
+    padding: 0;
+    a {
+        text-decoration: none;
+    }
+    .fotoProduk{
+        overflow: hidden;
+        width: 225px;
+        height: 225px;
+        img {
+            width: 100%;
+        }
+    }
+    &.last {
+        margin-right: 0;
+    }
+}
+
+.detailProduk {
+    .titleProduk {
+        @include h3-font($font-footer-h3, 1em, 0rem);
+        color: black;
+        line-height: 18px;
+        max-height: 36px;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .hargaProduk {
+        margin-bottom: 0;
+        line-height: 1.3em;
+        @include font-color($red-color, $font-footer-h3, 0.9em);
+    }
+    .iconPlace {
+        width: 8%;
+        height: 8%;
+    }
+    .vendorplace {
+        line-height: 1.3em;
+        @include font-color($gray-color, $font-placeholder, 0.9em);
+    }
+    .rating {
+        .starRating {
+            color: $gold-color;
+        }
+        .star5 {
+            color: $gray-color !important;
+        }
+        .ratingCount {
+            @include font-color($gray-color, $font-placeholder, 0.9em);
+        }
+    }
+}
+
+// How to
+.kotakHowTo {
+    border-radius: 10px;
+    height: 200px;
+    text-decoration: none;
+    .backTitleHowTo {
+        position: relative;
+        top: 6px;
+        left: 5px;
+        @include font-color($dark_color, $font-mermaid, 2em);
+    }
+    .foreTitleHowTo {
+        position: relative;
+        margin-top: -110px;
+        @include font-color($light_color, $font-mermaid, 2em);
+    }
+    .btn-readmore{
+        position: relative;
+        background-color: $light_color;
+        border-radius: 0;
+        @include font-color($dark_color, $font-button, 1.2em);
+        &.sewa {
+            margin-top: 67px;
+        }
+    }
+}
+
+.kotak2 {
+    .backTitleHowTo {
+        position: relative;
+        top: 4px;
+        left: 3px;
+        @include font-color($dark_color, $font-mermaid, 2em);
+    }
+    .foreTitleHowTo {
+        color: $light_color; 
+        margin-top: -65px;
+    }
+}
+
+.bgRental {
+    background-image: url(../assets/images/HowToRentalProduk.png);
+    @include BgImage();
+}
+
+.bgSewa {
+    background-image: url(../assets/images/HowToSewaJasa.png);
+    @include BgImage();
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 10px;
+}
+
+
+// footer
+.footer-dark{
+    margin-top: 90px;
+    padding: 50px 0px;
+    background-color: $footer-color;
+    h3 {
+        @include h3-font($font-footer-h3, 1.4em, 1rem);
+        margin-bottom: 2rem;
+    }
+    & ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 1.6;
+        font-family: $font-footer-link;
+        font-size: 1.2em;
+        a {
+            color: black;
+            text-decoration: none;
+            &:hover{
+                color: gray;
+            }
+        }
+    }
+}
+
+.btn-subscribe{
+    height: 38px;
+    background-color: $primary-color;
+    color: white;
+    font-family: $font-button;
+    font-size: 1em;
+    &:hover{
+        color: $footer-color;
+    }
+}
+
+.footer-copyright{
+    font-size: 1.1em;
+    font-family: $font-footer-link;
+    a {
+        color: black;
+        text-decoration: none;
+    }
+}

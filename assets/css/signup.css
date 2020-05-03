@@ -1,0 +1,267 @@
+body{
+	margin: 0;
+    padding: 0;
+    background-color: #2A3138;
+}
+
+/*----------TOP----------*/
+.top{
+    background-color: #252b30;
+    height : 51px;
+    width: 100%;
+    position: fixed;
+    margin-top: -65px;
+}
+
+.top img{
+    width: 71px;
+    height: 22px;
+    margin-left: 423px;
+    margin-top: 14px; 
+    position: relative;
+    align-self: 
+}
+
+.top .masuk{
+    margin-top: -20px;
+    margin-left: 876px;
+    border: none;
+    background: none;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    color: #ff643c;
+    position: relative;
+    text-decoration: none;
+}
+
+.top .masuk:hover{
+    color: white;
+    margin-left: 866px;
+    background-color: #ff643c;
+    border-radius: 3px;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.top p{
+    color: white;
+    font-weight: 400px;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin-top: -25px;
+    margin-bottom: -19px;
+    line-height: 20px;
+    position: relative;
+}
+
+/*----------MID----------*/
+.mid{
+    width: 520px;
+	height: 860px;
+	text-align: center;
+	background-color: white;
+	border-radius: 7px;
+    margin: 0 auto;
+    margin-top: 65px;
+}
+
+.mid img{
+    margin-top: 30px;
+    margin-left: 8px;
+}
+
+.mid .form_email{
+    border: #c7c7d8;
+    border-width: 1px;
+    border-style: solid;
+    width: 360px;
+    height: 25px;
+    padding: 10px;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    outline: none;
+}
+
+.mid .form_name{
+    border: #c7c7d8;
+    border-width: 1px;
+    border-style: solid;
+    width: 360px;
+    height: 25px;
+    padding: 10px;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    outline: none;
+}
+
+.mid .form_username{
+    border: #c7c7d8;
+    border-width: 1px;
+    border-style: solid;
+    width: 360px;
+    height: 25px;
+    padding: 10px;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    outline: none;
+}
+
+.mid .form_password{
+    border: #c7c7d8;
+    border-width: 1px;
+    border-style: solid;
+    width: 360px;
+    height: 25px;
+    padding: 10px;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    outline: none;
+}
+
+.mid p{
+    color: #3d3d41;
+    font-weight: 400px;
+    font-family: ProximaNova,Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-left: -330px;
+    margin-bottom: 5px;
+}
+
+.mid .Day{
+    height: 45px;
+    width: 90px;
+    margin-left: 5px;
+    margin-top: 10px;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial;
+    font-size: 17px;
+    border-color:#c7c7d8;
+    border-top: white;
+    border-left: white;
+}
+
+.mid .Month{
+    height: 45px;
+    width: 142.5px;
+    margin-top: 10px;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial;
+    font-size: 17px;
+    border-color:#c7c7d8;
+    border-top: white;
+    border-left: white;
+}
+
+.mid .Year{
+    height: 45px;
+    width: 142.5px;
+    margin-top: 10px;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial;
+    font-size: 17px;
+    border-color:#c7c7d8;
+    border-top: white;
+    border-left: white;
+}
+
+.mid .Gender{
+    height: 45px;
+    width: 380px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial;
+    font-size: 17px;
+    border-color:#c7c7d8;
+    border-top: white;
+    border-left: white;
+}
+
+.mid .Language{
+    height: 45px;
+    width: 380px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial;
+    font-size: 17px;
+    border-color:#c7c7d8;
+    border-top: white;
+    border-left: white;
+}
+
+.mid h1{
+    color: #3d3d41;
+    font-weight: 400px;
+    font-family: ProximaNova,Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-left: -330px;
+    margin-bottom: 5px;
+}
+
+.mid h2{
+    color: #3d3d41;
+    font-weight: 400px;
+    font-family: ProximaNova,Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-left: -335px;
+    margin-bottom: 5px;
+}
+
+.mid h3{
+    color: #3d3d41;
+    font-weight: 400px;
+    font-family: ProximaNova,Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-left: -320px;
+    margin-bottom: 5px;
+}
+
+.mid h4{
+    color: #3d3d41;
+    font-weight: 400px;
+    font-family: ProximaNova,Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-left: -75px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.mid h5{
+    color: #3d3d41;
+    font-weight: 400px;
+    font-family: ProximaNova,Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    margin-left: 70px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.mid u{
+    color: #ff643c;
+}
+
+.mid .SignUp{
+    background:	#EE4E1D;
+	color: white;
+	font-size: 13px;
+	width: 382px;
+	border: none;
+	border-radius: 3px;
+    padding: 12px 0px;
+    margin-bottom: -5px;
+    font-weight: 600;
+}
+
+.mid .SignUp:hover{
+    background:	rgb(209, 69, 27);
+}

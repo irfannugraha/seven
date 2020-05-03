@@ -1,0 +1,301 @@
+@font-face {
+  src: url(../assets/font/Mermaid/Mermaid.ttf);
+  font-family: Mermaid;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-Light.otf);
+  font-family: MazzardMLight;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardH-Regular.otf);
+  font-family: MazzardHRegular;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardH-Medium.otf);
+  font-family: MazzardHMedium;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-Medium.otf);
+  font-family: MazzardMMedium;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-Regular.otf);
+  font-family: MazzardMRegular;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-SemiBold.otf);
+  font-family: MazzardMSemiBold;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardL-Regular.otf);
+  font-family: MazzardLRegular;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardL-Light.otf);
+  font-family: MazzardLLight;
+}
+
+.gambarProduk {
+  width: 325px;
+}
+
+.gambarProduk .img-thumbnail {
+  width: 100%;
+}
+
+.gambarProduk .small-img {
+  height: 50px;
+  margin: 10px 0px;
+  position: relative;
+}
+
+.gambarProduk .small-img .icon-left {
+  width: 12px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.gambarProduk .small-img .icon-left:hover {
+  opacity: .5;
+}
+
+.gambarProduk .small-img .icon-right {
+  width: 12px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 0;
+}
+
+.gambarProduk .small-img .icon-right:hover {
+  opacity: .5;
+}
+
+.gambarProduk .small-container {
+  width: 300px;
+  height: 50px;
+  overflow: hidden;
+  position: absolute;
+  left: 10;
+  right: 0;
+  margin: 0 auto;
+}
+
+.gambarProduk .small-container div {
+  width: 800%;
+  position: relative;
+}
+
+.gambarProduk .small-container .show-small-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 6px;
+  cursor: pointer;
+  float: left;
+}
+
+.gambarProduk .small-container .show-small-img:last-of-type {
+  margin-right: 0;
+}
+
+.detailedProduk .titleProduk {
+  font-size: 1.5em;
+  font-family: MazzardHMedium;
+  margin-bottom: 0;
+  line-height: 28px;
+  max-height: 56px;
+  word-wrap: break-word;
+}
+
+.detailedProduk .rating .starRating {
+  font-size: 1.1em;
+  margin-left: 3px;
+  color: #FFC062;
+}
+
+.detailedProduk .rating .star5 {
+  color: #666666 !important;
+}
+
+.detailedProduk .rating .ratingCount {
+  font-family: MazzardMLight;
+  font-size: 1.1em;
+  color: #000000;
+}
+
+.detailedProduk .hargaProduk {
+  line-height: 1.3em;
+  font-family: MazzardMMedium;
+  font-size: 2em;
+  color: #DD3737;
+}
+
+.detailedProduk .iconPlace {
+  width: 5%;
+  height: 5%;
+}
+
+.detailedProduk .vendorplace {
+  line-height: 1.3em;
+  font-family: MazzardMLight;
+  font-size: 1.3em;
+  color: #666666;
+}
+
+.amountDetail p {
+  font-family: MazzardMRegular;
+  font-size: 1em;
+  color: #000000;
+}
+
+.amountDetail .input-group {
+  width: 80% !important;
+}
+
+.amountDetail .input-group .form-control {
+  height: auto;
+}
+
+.amountDetail span {
+  font-family: MazzardMRegular;
+  font-size: 1.2em;
+  color: #000000;
+}
+
+.catatanUser .labelCatatan {
+  font-family: MazzardMRegular;
+  font-size: 1em;
+  color: #000000;
+}
+
+.catatanUser textarea {
+  resize: none;
+}
+
+.catatanUser .form-control {
+  width: 84%;
+}
+
+.btn-inc, .btn-dec {
+  background-color: #F1F1F1;
+  border: 1px solid #C4C4C4;
+  font-family: MazzardMRegular;
+  font-size: 1.2em;
+  color: #000000;
+}
+
+.btn-inc:focus, .btn-dec:focus {
+  -webkit-box-shadow: 0 0 0 0.1rem rgba(70, 71, 71, 0.1);
+          box-shadow: 0 0 0 0.1rem rgba(70, 71, 71, 0.1);
+}
+
+.btn-sewa {
+  background-color: #2AC956;
+  font-family: MazzardMRegular;
+  font-size: 1em;
+  color: #FFFFFF;
+}
+
+.btn-sewa:hover {
+  background-color: #35aa56;
+  color: #FFFFFF;
+}
+
+.btn-addCart {
+  background-color: #FFFFFF;
+  font-family: MazzardMRegular;
+  font-size: 1em;
+  color: #5741D9;
+  border: 1px solid #5741D9;
+}
+
+.btn-addCart:hover {
+  background-color: #5741D9;
+  color: #FFFFFF;
+}
+
+.kotakVendor {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #C4C4C4;
+}
+
+.kotakVendor h4 {
+  font-family: MazzardMRegular;
+  font-size: 1.1em;
+  color: #666666;
+}
+
+.kotakVendor a {
+  text-decoration: none;
+  font-family: MazzardMMedium;
+  font-size: 0.8em;
+  color: #000000;
+}
+
+.kotakVendor a .foto-profil-vendor {
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+.kotakVendor .profileVendorLeft .iconPlace {
+  width: 15%;
+  height: 15%;
+}
+
+.kotakVendor .profileVendorLeft .vendorplace {
+  font-family: MazzardMLight;
+  font-size: 0.9em;
+  color: #666666;
+}
+
+.nav-tabs .nav-link {
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: MazzardMSemiBold;
+  font-size: 1.3em;
+  color: #7B7B7B;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #5741D9;
+  border: none;
+}
+
+.nav-tabs .nav-link.active {
+  color: #5741D9;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #5741D9;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+/*# sourceMappingURL=detailbarang.css.map */

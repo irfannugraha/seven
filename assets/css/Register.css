@@ -1,0 +1,276 @@
+.Header {
+  text-align: center;
+}
+
+.section {
+  background-color: blue;
+}
+
+
+
+.register {
+  background: white;
+  padding: 40px;
+}
+
+@media (max-width: 576px) {
+  .register {
+    padding: 40px 0px;
+  }
+}
+
+.register .image-holder {
+  display: table-cell;
+  width: auto;
+  background: url(../../assets/img/meeting.jpg);
+  background-size: cover;
+}
+
+.register .form-container {
+  display: table;
+  background-color: white;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 360px) {
+  .register .form-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 576px) {
+  .register .form-container {
+    width: 60%;
+  }
+}
+
+.register form {
+  display: table-cell;
+  padding: 40px 40px;
+  color: #505e6c;
+}
+
+.register form h2 {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.register form .form-group-child {
+  background: #f7f9fc;
+  border: 1px solid #666666;
+  color: #A7A7A7;
+  border-radius: 10px;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 6px;
+  height: 40px;
+}
+
+.register form .form-check {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.register form .btn {
+  border-radius: 15px;
+  padding: 10px 40px;
+  box-shadow: none;
+  text-shadow: none;
+  outline: none !important;
+}
+
+.btn.btn-primary.secondary {
+  border-radius: 0px;
+  padding: 0px;
+  background: white;
+  color: black;
+}
+
+.register form .btn-primary {
+  background: #5741D9;
+  border: none;
+}
+
+.register form .btn-primary:hover, .register form .btn-primary:active {
+  background: #402eaa;
+}
+
+.register form .btn-primary:active {
+  transform: translateY(1px);
+}
+
+.register form .already {
+  text-align: center;
+  font-size: 12px;
+}
+
+.register form .form-label {
+  font-size: 15px;
+  /*font-family: Mazzard;*/
+  line-height: 26px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+}
+
+.separator::before, .separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #5C5C5C;
+}
+
+.separator::before {
+  margin-right: 1em;
+}
+
+.separator::after {
+  margin-left: 1em;
+}
+
+.btn.btn-outline-primary {
+  color: black;
+  border: 1px solid #666666;
+}
+
+.btn.btn-outline-primary.google:hover {
+  background-image: url("../../assets/img/flat-color-icons_google.png");
+}
+
+.btn.btn-outline-primary.google {
+  background-image: url("../../assets/img/logo-gmail.png");
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: 30px center;
+}
+
+.btn.btn-outline-primary.facebook {
+  background-image: url("../../assets/img/logo-facebook.png");
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-position: 30px center;
+}
+
+.btn.btn-outline-primary.facebook:hover {
+  background-image: url("../../assets/img/logos-facebook.png");
+}
+
+.btn.btn-outline-primary:hover {
+  color: white;
+}
+
+
+
+.login-clean {
+  background: #f1f7fc;
+  padding: 80px 0;
+}
+
+.login-clean form {
+  max-width: 320px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 4px;
+  color: #505e6c;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+
+.login-clean .illustration {
+  text-align: center;
+  padding: 0 0 20px;
+  font-size: 100px;
+  color: rgb(244,71,107);
+}
+
+.login-clean form .form-control {
+  background: #f7f9fc;
+  border: none;
+  border-bottom: 1px solid #dfe7f1;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 8px;
+  height: 42px;
+}
+
+.login-clean form .btn-primary {
+  background: #f4476b;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 26px;
+  text-shadow: none;
+  outline: none !important;
+}
+
+.login-clean form .btn-primary:hover, .login-clean form .btn-primary:active {
+  background: #eb3b60;
+}
+
+.login-clean form .btn-primary:active {
+  transform: translateY(1px);
+}
+
+.login-clean form .forgot {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #6f7a85;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.login-clean form .forgot:hover, .login-clean form .forgot:active {
+  opacity: 1;
+  text-decoration: none;
+}
+
+icon {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form-group {
+  box-sizing: border-box;
+}
+
+.icon {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.icon a {
+  width: 20px;
+  height: 20px;
+  color: red;
+  background-image: url("../../assets/img/Peek.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.form-group icon {
+  background-image: url("../../assets/img/logo-gmail.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.form-group .form-control {
+  border: 1px solid;
+}

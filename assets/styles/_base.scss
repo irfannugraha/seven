@@ -1,0 +1,62 @@
+@font-face {
+    src: url(../assets/font/Mermaid/Mermaid.ttf);
+    font-family: Mermaid;
+}
+
+@font-face {
+    src: url(../assets/font/Mazzard/MazzardM-Light.otf);
+    font-family: MazzardMLight;
+}
+
+@font-face {
+    src: url(../assets/font/Mazzard/MazzardH-Regular.otf);
+    font-family: MazzardHRegular;
+}
+
+@font-face {
+    src: url(../assets/font/Mazzard/MazzardH-Medium.otf);
+    font-family: MazzardHMedium;
+}
+
+@font-face {
+    src: url(../assets/font/Mazzard/MazzardM-Medium.otf);
+    font-family: MazzardMMedium;
+}
+
+@font-face {
+    src: url(../assets/font/Mazzard/MazzardM-Regular.otf);
+    font-family: MazzardMRegular;
+}
+
+@font-face {
+    src: url(../assets/font/Mazzard/MazzardM-SemiBold.otf);
+    font-family: MazzardMSemiBold;
+}
+
+@font-face {
+    src: url(../assets/font/Mazzard/MazzardL-Regular.otf);
+    font-family: MazzardLRegular;
+}
+
+@font-face {
+    src: url(../assets/font/Mazzard/MazzardL-Light.otf);
+    font-family: MazzardLLight;
+}
+
+$primary-color: #5741D9;
+$primary-color-dark: #0D0C52;
+$light-color: #FFFFFF;
+$dark-color:#000000;
+$red-color: #DD3737;
+$footer-color: #F1F1F1;
+$gray-color: #666666;
+$gold-color: #FFC062;
+$font-mermaid: Mermaid;
+$font-placeholder: MazzardMLight;
+$font-navlink: MazzardHRegular;
+$font-button: MazzardMRegular;
+$font-footer-h3: MazzardMSemiBold;
+$font-kategori-h3: MazzardMMedium;
+$font-item-kategori: MazzardLRegular;
+$font-footer-link: MazzardLLight;
+$font-h-medium: MazzardHMedium;

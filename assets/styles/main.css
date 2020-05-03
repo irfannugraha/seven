@@ -1,0 +1,462 @@
+@font-face {
+  src: url(../assets/font/Mermaid/Mermaid.ttf);
+  font-family: Mermaid;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-Light.otf);
+  font-family: MazzardMLight;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardH-Regular.otf);
+  font-family: MazzardHRegular;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardH-Medium.otf);
+  font-family: MazzardHMedium;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-Medium.otf);
+  font-family: MazzardMMedium;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-Regular.otf);
+  font-family: MazzardMRegular;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardM-SemiBold.otf);
+  font-family: MazzardMSemiBold;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardL-Regular.otf);
+  font-family: MazzardLRegular;
+}
+
+@font-face {
+  src: url(../assets/font/Mazzard/MazzardL-Light.otf);
+  font-family: MazzardLLight;
+}
+
+/* Navbar */
+.navbar-shadow {
+  -webkit-box-shadow: 0px 2px 0.5rem 0rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 0.5rem 0rem rgba(0, 0, 0, 0.3);
+}
+
+.bg-primary {
+  background-color: #5741D9 !important;
+}
+
+.navbar-brand img {
+  max-height: 24px;
+}
+
+.input-group {
+  width: 650px !important;
+}
+
+.input-group-append .btn img {
+  max-width: 25px;
+}
+
+.form-control {
+  font-family: MazzardMLight;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #0D0C52;
+  opacity: 0.5;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #0D0C52;
+  opacity: 0.5;
+}
+
+.form-control::-ms-input-placeholder {
+  color: #0D0C52;
+  opacity: 0.5;
+}
+
+.form-control::placeholder {
+  color: #0D0C52;
+  opacity: 0.5;
+}
+
+.form-control:focus, .btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-search {
+  background-color: #C4C4C4;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  font-family: MazzardHRegular;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+}
+
+.navbar-dark .navbar-nav .nav-link img {
+  height: 24px;
+  width: 24px;
+}
+
+.icon-navbar:hover {
+  background-color: #0D0C52;
+  border-radius: 5px;
+}
+
+.icon-navbar:hover i {
+  color: #5741D9;
+}
+
+.vr {
+  border-left: 2px solid #0D0C52;
+  height: 40px;
+}
+
+.btn-login {
+  font-family: MazzardHRegular;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+}
+
+.btn-login:hover {
+  color: #5741D9;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.btn-register {
+  font-family: MazzardHRegular;
+  font-size: 1.1rem;
+  color: #000000;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.btn-register:hover {
+  color: #5741D9;
+}
+
+.title-navbar {
+  margin-top: 1px;
+  font-family: MazzardHRegular;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+}
+
+.foto-profil {
+  border-radius: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+/* Carousel */
+.info-panel {
+  margin-top: 70px;
+}
+
+.kolom {
+  margin-top: 28px;
+}
+
+.carouselItem {
+  width: 600px;
+  height: 300px;
+  font-size: 4rem;
+  border-radius: 20px;
+  background-color: grey;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.slider {
+  width: 100%;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 600px;
+  height: 300px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-slide {
+  -webkit-transition: all ease-in-out .3s;
+  transition: all ease-in-out .3s;
+  opacity: .2;
+}
+
+.slick-active {
+  opacity: .5;
+}
+
+.slick-current {
+  opacity: 1;
+}
+
+.slick-dots {
+  bottom: 10px;
+}
+
+.kotakKategori {
+  padding: 32px 50px 19px;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 5px 1px #ccc;
+          box-shadow: 1px 1px 5px 1px #ccc;
+}
+
+.kotakKategori h3 {
+  font-size: 1.5em;
+  font-family: MazzardMMedium;
+  margin-bottom: 2rem;
+}
+
+.kotakKategori .link-kategori {
+  width: 100px;
+  font-family: MazzardLRegular;
+  margin-right: 36px;
+  margin-bottom: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+.kotakKategori .link-kategori img {
+  height: 48px;
+  width: 48px;
+}
+
+.kotakKategori .link-kategori h5 {
+  margin-top: 5px;
+}
+
+.titleGroup h2 {
+  margin-top: 28px;
+  font-size: 2em;
+  font-family: MazzardMSemiBold;
+  margin-bottom: 1.5rem;
+}
+
+.kotakProduk {
+  width: 225px;
+  background-color: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 5px 1px #ccc;
+          box-shadow: 1px 1px 5px 1px #ccc;
+  margin-right: 28px;
+  padding: 0;
+}
+
+.kotakProduk a {
+  text-decoration: none;
+}
+
+.kotakProduk .fotoProduk {
+  overflow: hidden;
+  width: 225px;
+  height: 225px;
+}
+
+.kotakProduk .fotoProduk img {
+  width: 100%;
+}
+
+.kotakProduk.last {
+  margin-right: 0;
+}
+
+.detailProduk .titleProduk {
+  font-size: 1em;
+  font-family: MazzardMSemiBold;
+  margin-bottom: 0rem;
+  color: black;
+  line-height: 18px;
+  max-height: 36px;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.detailProduk .hargaProduk {
+  margin-bottom: 0;
+  line-height: 1.3em;
+  font-family: MazzardMSemiBold;
+  font-size: 0.9em;
+  color: #DD3737;
+}
+
+.detailProduk .iconPlace {
+  width: 8%;
+  height: 8%;
+}
+
+.detailProduk .vendorplace {
+  line-height: 1.3em;
+  font-family: MazzardMLight;
+  font-size: 0.9em;
+  color: #666666;
+}
+
+.detailProduk .rating .starRating {
+  color: #FFC062;
+}
+
+.detailProduk .rating .star5 {
+  color: #666666 !important;
+}
+
+.detailProduk .rating .ratingCount {
+  font-family: MazzardMLight;
+  font-size: 0.9em;
+  color: #666666;
+}
+
+.kotakHowTo {
+  border-radius: 10px;
+  height: 200px;
+  text-decoration: none;
+}
+
+.kotakHowTo .backTitleHowTo {
+  position: relative;
+  top: 6px;
+  left: 5px;
+  font-family: Mermaid;
+  font-size: 2em;
+  color: #000000;
+}
+
+.kotakHowTo .foreTitleHowTo {
+  position: relative;
+  margin-top: -110px;
+  font-family: Mermaid;
+  font-size: 2em;
+  color: #FFFFFF;
+}
+
+.kotakHowTo .btn-readmore {
+  position: relative;
+  background-color: #FFFFFF;
+  border-radius: 0;
+  font-family: MazzardMRegular;
+  font-size: 1.2em;
+  color: #000000;
+}
+
+.kotakHowTo .btn-readmore.sewa {
+  margin-top: 67px;
+}
+
+.kotak2 .backTitleHowTo {
+  position: relative;
+  top: 4px;
+  left: 3px;
+  font-family: Mermaid;
+  font-size: 2em;
+  color: #000000;
+}
+
+.kotak2 .foreTitleHowTo {
+  color: #FFFFFF;
+  margin-top: -65px;
+}
+
+.bgRental {
+  background-image: url(../assets/images/HowToRentalProduk.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.bgSewa {
+  background-image: url(../assets/images/HowToSewaJasa.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  border-radius: 10px;
+}
+
+.footer-dark {
+  margin-top: 90px;
+  padding: 50px 0px;
+  background-color: #F1F1F1;
+}
+
+.footer-dark h3 {
+  font-size: 1.4em;
+  font-family: MazzardMSemiBold;
+  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.footer-dark ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+  font-family: MazzardLLight;
+  font-size: 1.2em;
+}
+
+.footer-dark ul a {
+  color: black;
+  text-decoration: none;
+}
+
+.footer-dark ul a:hover {
+  color: gray;
+}
+
+.btn-subscribe {
+  height: 38px;
+  background-color: #5741D9;
+  color: white;
+  font-family: MazzardMRegular;
+  font-size: 1em;
+}
+
+.btn-subscribe:hover {
+  color: #F1F1F1;
+}
+
+.footer-copyright {
+  font-size: 1.1em;
+  font-family: MazzardLLight;
+}
+
+.footer-copyright a {
+  color: black;
+  text-decoration: none;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,123 @@
+body{
+	margin: 0;
+    padding: 0;
+}
+
+/*----------TOP----------*/
+.header{
+    background-color: white;
+    height : 49px;
+    margin-bottom: -15px;
+    z-index: 2;
+}
+
+.header img{
+    width: 71px;
+    height: 22px;
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top: 14px;
+}
+
+.header .burung{
+    margin-left: 645px;
+    margin-top: 65px;
+    width: 75px;
+    height: 63px;
+}
+
+.header p{
+    color: white;
+    font-weight: 400px;
+    font-family: ProximaNova,Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 20px;
+}
+
+.header .signup{
+    padding:10px 130px;
+	color: #784589;
+	border-radius: 4px;
+	border: none;
+    background-color:white;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: ProximaNova,Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.header .login{
+    padding:10px 133.5px;
+	color:white;
+    border-radius: 4px;
+    border: white;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #784589;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: ProximaNova,Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.header .google{
+    height:45px;
+    width: 135px;
+    margin-left: 690px;
+    margin-top: 74px;
+}
+
+/*----------MID----------*/
+.mid{
+    background-color: #784589;
+    background-image: url('https://d1muxuiltlupn6.cloudfront.net/assets/welcome-bg-effb1cfd3224737051832ad3bd540fa99068d13e8616048c052e6772b8fa05f2.png')no-repeat;
+    background-size: 1400px;
+    min-width: 520px;
+}
+
+.mid .ios{
+    height:45px;
+    width: 135px;
+    margin-left: 545px;
+    margin-top: 380px;
+}
+
+.mid .background{
+    margin-left: -10px;
+    margin-top: -128px;
+    width: 100%;
+    height: 170px;
+}
+
+.footer .faces .capt{
+    margin-left: 260px;
+}
+
+.footer .faces img{
+    height: 40px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+.footer .siteLinks .cap{
+    margin-left: 360px;
+}
+
+.footer .siteLinks a{
+    font-family: ProximaNova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    text-decoration: none;
+    padding: 0 5px;
+    color: #4A4A50;
+    text-align: center;
+}
