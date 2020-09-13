@@ -15,7 +15,7 @@ class Barang
     var $date_upload;
     var $deleted;
 
-    public function __construct($idBarang, $idVendor, $jenisBarang, $namaBarang, $stok, $harga_awal, $harga_akhir, $deskripsi, $date_upload, $foto=null, $rating=0, $deleted=0){
+    public function __construct($idBarang, $idVendor, $jenisBarang, $namaBarang, $stok, $harga_awal, $harga_akhir, $deskripsi, $date_upload, $foto='assets/assets/images/no_image.jpg', $rating=0, $deleted=0){
         $this->id_barang = $idBarang;
         $this->id_vendor = $idVendor;
         $this->nama = $namaBarang;

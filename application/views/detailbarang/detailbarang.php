@@ -9,13 +9,13 @@
 
                     <div class="col-md-auto p-0 gambarProduk" id="imgProduk">
                         <div class="gambarDetail" style="height: 60%;">
-                            <img class="img-thumbnail" src="<?= $detailBarang->Get_Foto() ?>" alt="GambarProduk" id="show-img">
+                            <img class="img-thumbnail" src="<?= base_url().$detailBarang->Get_Foto() ?>" alt="GambarProduk" id="show-img">
                         </div>
                         <div class="small-img">
                             <img class="icon-left" src="<?= base_url() ?>assets/assets/images/Produk/next-icon.png" alt="" id="prev-img">
                                 <div class="small-container">
                                     <div class="small-img-roll">
-                                        <img src="<?= $detailBarang->Get_Foto() ?>" alt="" class="show-small-img">
+                                        <img src="<?= base_url().$detailBarang->Get_Foto() ?>" alt="" class="show-small-img">
                                     </div>
                                 </div>
                             <img class="icon-right" src="<?= base_url() ?>assets/assets/images/Produk/next-icon.png" alt="" id="next-img">
@@ -41,17 +41,17 @@
                         </div>
                         <div class="row mt-5 amountDetail">
                             <div class="col-md-5">
-                                <p class="mb-2">Lama Rental</p>
+                                <p class="mb-2">Lama Sewa</p>
                                 <div class="d-flex align-item-center">
                                     <div class="input-group float-left">
                                         <div class="input-group-prepend">
-                                            <button class="btn btn-inc px-3 py-1" onclick="document.getElementById('lamaHari').stepDown()" id="incdecLamaSewa">
+                                            <button class="btn btn-inc px-3 py-1" onclick="document.getElementById('lamaHari').stepDown(); multipleBiaya();" id="incdecLamaSewa">
                                                 -
                                             </button>
                                         </div>
                                         <input type="number" id="lamaHari" class="form-control px-2 text-center" min="1" max="30" value="1" aria-describedby="incdecLamaSewa">
                                         <div class="input-group-append">
-                                            <button class="btn btn-dec px-3 py-1" onclick="document.getElementById('lamaHari').stepUp()" id="incdecLamaSewa">
+                                            <button class="btn btn-dec px-3 py-1" onclick="document.getElementById('lamaHari').stepUp(); multipleBiaya();" id="incdecLamaSewa">
                                                 +
                                             </button>
                                         </div>
@@ -64,13 +64,13 @@
                                 <div class="d-flex align-item-center">
                                     <div class="input-group float-left">
                                         <div class="input-group-prepend">
-                                            <button class="btn btn-inc px-3 py-1" onclick="document.getElementById('jumlahProduk').stepDown()" id="incdecJumlahProduk">
+                                            <button class="btn btn-inc px-3 py-1" onclick="document.getElementById('jumlahProduk').stepDown(); multipleBiaya();" id="incdecJumlahProduk">
                                                 -
                                             </button>
                                         </div>
                                         <input type="number" id="jumlahProduk" class="form-control px-2 text-center" min="1" max="<?= $detailBarang->Get_Stok() ?>" value="1" aria-describedby="incdecJumlahProduk">
                                         <div class="input-group-append">
-                                            <button class="btn btn-dec px-3 py-1" onclick="document.getElementById('jumlahProduk').stepUp()" id="incdecJumlahProduk">
+                                            <button class="btn btn-dec px-3 py-1" onclick="document.getElementById('jumlahProduk').stepUp(); multipleBiaya();" id="incdecJumlahProduk">
                                                 +
                                             </button>
                                         </div>
@@ -78,21 +78,57 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-group mt-4 catatanUser">
-                            <label class="labelCatatan" for="formCatatanUntukVendor">Catatan untuk vendor (opsional)</label>
-                            <textarea class="form-control" id="formCatatanUntukVendor" rows="5"></textarea>
+                            <label class="labelCatatan" for="formCatatanUntukVendor">Total Biaya</label>
+                            <h2 class="hargaProduk mb-2" id="totalBiaya">
+                                Rp <?= number_format($detailBarang->Get_Harga_awal(),0,".",".") ?>
+                                <script type="text/javascript">
+                                    function multipleBiaya() {
+                                        jumProduk = document.getElementById('jumlahProduk').value;
+                                        lamaSewa = document.getElementById('lamaHari').value;
+                                        biaya = <?php echo $detailBarang->Get_Harga_awal() ?> * jumProduk * lamaSewa;
+
+                                        document.getElementById('totalBiaya').innerHTML = "Rp " + biaya.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+                                        document.getElementById('total').value = biaya;
+                                    }
+                                </script>
+                            </h2>
                         </div>
                         <div class="row mt-4">
-                            <div class="col-md-5 pr-2">
-                                <button class="btn btn-sewa w-100">
-                                    Sewa
-                                </button>
-                            </div>
-                            <div class="col-md-5 px-2">
-                                <button class="btn btn-addCart w-100">
-                                    Tambah ke Keranjang
-                                </button>
-                            </div>
+                                <div class="col-md-5 px-2">
+
+                                    <form method="post" action="<?php echo base_url().'C_login/index'; ?>" <?php if ($pelanggan) echo 'style="display: none"' ?> >
+                                        <button class="btn btn-addCart w-100">
+                                            login
+                                        </button>
+                                    </form>
+
+                                    <form method="post" action="<?php echo base_url(). 'c_Barang/transaksi/' . $detailBarang->Get_Id_barang(); if ($pelanggan) echo '/'. $pelanggan->Get_Id_pelanggan(); ?> <?php '' ?>" <?php if (!$pelanggan) echo 'style="display: none"'?>>
+                                        <input id="total" name="total" style="display: none">
+                                        <button class="btn btn-addCart w-100" <?php if ($cek_keranjang) echo 'disabled'?>>
+                                            sewa
+                                        </button>
+                                    </form>
+
+                                </div>
+                                <?php
+                                    if (!$pelanggan) {
+                                        echo '
+                                            <div class="col-md-5 px-2">
+                                                Mohon login untuk menyewa
+                                            </div>
+                                        ';
+                                    }
+                                    if ($cek_keranjang) {
+                                        echo '
+                                            <div class="col-md-5 px-2">
+                                                Mohon selesaikan transaksi
+                                            </div>
+                                        ';                                        
+                                    }
+                                ?>
+
                         </div>
                     </div>
 
@@ -106,7 +142,7 @@
                             <a href="<?= base_url(); ?>profilevendor/index/<?= $detailVendor->Get_Id_vendor() ?>" class="nav-link p-0">
                                 <div class="row profileVendorLeft">
                                     <div class="col-md-auto pr-0">
-                                        <img class="foto-profil-vendor" src="<?= base_url() ?>assets/assets/images/profileVendor.png" alt="">
+                                        <img class="foto-profil-vendor" src="<?= base_url().$detailVendor->Get_Profile_img()?>" alt="">
                                     </div>
                                     <div class="col-md-auto mt-1">
                                         <p class="mb-1"><?= $detailVendor->Get_Nama_vendor() ?></p>

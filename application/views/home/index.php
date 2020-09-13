@@ -125,11 +125,11 @@
                         
                         <a href="<?php echo base_url() .'C_Barang/index/'. $popular->Get_Id_barang() ?><?php if ($pelanggan){echo "/".$pelanggan->Get_Id_pelanggan();}?>">
                             <div class="fotoProduk">
-                                <img src="<?= $popular->Get_Foto() ?>" alt="Produk 1">
+                                <img src="<?= base_url().$popular->Get_Foto() ?>" alt="Produk 1">
                             </div>
                             <div class="detailProduk mx-3 mt-2">
                                 <h5 class="titleProduk"><?= $popular->Get_Nama() ?></h5>
-                                <p class="hargaProduk mt-2">Rp <?= number_format($popular->Get_Harga_awal(),0,".",".") ?> - Rp <?= number_format($popular->Get_Harga_akhir(),0,".",".") ?></p>
+                                <p class="hargaProduk mt-2">Rp <?= number_format((int)$popular->Get_Harga_awal(),0,".",".") ?> - Rp <?= number_format((int)$popular->Get_Harga_akhir(),0,".",".") ?></p>
                                 <div class="mt-1">
                                     <img class="iconPlace" src="<?= base_url() ?>/assets/assets/images/icon_place.svg" alt="Place"> <span class="vendorplace"><?= $lokasiPopular[$key] ?></span>
                                 </div>
@@ -160,11 +160,11 @@
                     <div class="kotakProduk pb-3">
                         <a class href="#">
                             <div class="fotoProduk">
-                                <img src="<?= $lastest[$x]->Get_Foto() ?>" alt="Produk 1">
+                                <img src="<?= base_url().$lastest[$x]->Get_Foto() ?>" alt="Produk 1">
                             </div>
                             <div class="detailProduk mx-3 mt-2">
                                 <h5 class="titleProduk"><?= $lastest[$x]->Get_Nama() ?></h5>
-                                <p class="hargaProduk mt-2">Rp <?= number_format($lastest[$x]->Get_Harga_awal(),0,".",".") ?> - Rp <?= number_format($lastest[$x]->Get_Harga_akhir(),0,".",".") ?></p>
+                                <p class="hargaProduk mt-2">Rp <?= number_format((int)$lastest[$x]->Get_Harga_awal(),0,".",".") ?> - Rp <?= number_format((int)$lastest[$x]->Get_Harga_akhir(),0,".",".") ?></p>
                                 <div class="mt-1">
                                     <img class="iconPlace" src="<?= base_url() ?>/assets/assets/images/icon_place.svg" alt="Place"> <span class="vendorplace"><?= $lokasiLastest[$x] ?></span>
                                 </div>

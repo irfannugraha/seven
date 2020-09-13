@@ -51,10 +51,10 @@
 
                 <ul class="navbar-nav ml-5">
                     <li class="nav-item mx-md-2">
-                        <a href="#" class="nav-link">Rental produk</a>
+                        <label href="#" class="nav-link" style="color:#5741D9">Rental produk</label>
                     </li>
                     <li class="nav-item mx-md-2">
-                        <a href="#" class="nav-link">Sewa jasa</a>
+                        <label href="#" class="nav-link" style="color:#5741D9">Sewa jasa</label>
                     </li>
                     <div class="vr mx-3"></div>
                 </ul>

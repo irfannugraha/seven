@@ -4,19 +4,18 @@ class C_Home extends CI_Controller
 {
     public function __construct(){
         parent::__construct();
-        $this->load->model('HomeModel');
+        // $this->load->model('HomeModel');
         $this->load->model('class/Model');
     }
 
     public function index($idU=null){
         $data = [
             'judul' => 'SEVEN - Sewa Vendor',
-            'carouselimg' => $this->HomeModel->get_CarouselImage(),
+            'carouselimg' => $this->Model->get_CarouselImage(),
             'popular' => $this->Model->Get_Barang(null, null, 'rating', 5),
             'lokasiPopular' => [],
             'lokasiLastest' => [],
             'lastest' => $this->Model->Get_Barang(null, null, 'date_upload', 5)
-            // 'jasa' => $this->HomeModel->get_lastSewaJasa()
         ];
 
         foreach ($data['popular'] as $i => $popular) {

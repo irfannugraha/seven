@@ -6,8 +6,8 @@
             <div class="col-lg-auto profil-pict">
                 <!-- Start: profil pict -->
                 <div class="card mb-3">
-                    <div class="card-body text-center"><img class="rounded-circle mb-3 mt-3" src="<?php echo base_url()."assets/img/dogs/image2.jpeg" ?>" width="70px" height="70px">
-                        <h6 class="font-weight-bold m-0">Rumah kamera</h6>
+                    <div class="card-body text-center"><img class="rounded-circle mb-3 mt-3" src="<?php echo base_url().$vendor->Get_Profile_img() ?>" width="70px" height="70px">
+                        <h6 class="font-weight-bold m-0"><?= $vendor->Get_Nama_vendor()?></h6>
                     </div>
                 </div>
                 <!-- End: profil pict -->

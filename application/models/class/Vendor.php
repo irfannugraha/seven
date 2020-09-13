@@ -16,7 +16,7 @@ class Vendor extends CI_Model
 
     // var $barang;
 
-    public function __construct($id_vendor, $nama_vendor, $hp_vendor, $alamat_vendor, $daerah_vendor=null, $profile_img=null, $header_vendor=null, $deskripsi_vendor=null, $email_vendor=null, $deleted=0){
+    public function __construct($id_vendor, $nama_vendor, $hp_vendor, $alamat_vendor, $daerah_vendor=null, $profile_img='assets/assets/images/sampul-vendor.jpg', $header_vendor='assets/assets/images/avatars/kuta-pantai-paling-kondang-sedunia_130746_1140.jpeg', $deskripsi_vendor=null, $email_vendor=null, $deleted=0){
         $this->id_vendor = $id_vendor;
         $this->nama_vendor = $nama_vendor;
         $this->alamat_vendor = $alamat_vendor;
@@ -32,18 +32,7 @@ class Vendor extends CI_Model
     public function Add_Barang($barang){
         // $this->barang = new Barang();
     }
-
-    public function View_Barang(){
-
-    }
-
-    public function Edit_Barang(){
-
-    }
-
-    public function Delete_Barang(){
-        
-    }
+    
 
     // setter
     public function Set_Id_vendor($id_vendor){

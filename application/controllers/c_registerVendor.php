@@ -18,16 +18,20 @@ class c_registerVendor extends CI_Controller {
 	}
 	
 	public function tambahAkun($idV, $idU){
+		$daerah = explode(" ", $this->input->post('alamat'));
+		$daerah = $daerah[count($daerah)-1];
+		
 		$vendor = new Vendor(
 			$idV,
 			$this->input->post('nama'),
 			$this->input->post('telepon'),
-			$this->input->post('alamat')
+			$this->input->post('alamat'),
+			$daerah
 		);
 		$this->Model->Insert_Vendor($vendor);
 		$this->Model->Update_Pelanggan($idU, ['id_vendor' =>$idV]);
 
-		redirect('c_profil_biodataDiri/index/'.$idU.'/'.$idV);
+		redirect('c_profil_biodataDiri/index/'.$idU.'/vendor');
 	}
 
 }

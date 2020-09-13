@@ -15,7 +15,7 @@ class Pelanggan
     var $id_vendor;
     var $deleted;
 
-    public function __construct($idPelanggan, $email, $password, $nama, $last_update, $alamat=null, $telepon=null, $tanggal_lahir=null, $jenis_kelamin=null, $profil_image=null, $idVendor=null, $deleted=0){
+    public function __construct($idPelanggan, $email, $password, $nama, $last_update, $alamat=null, $telepon=null, $tanggal_lahir=null, $jenis_kelamin=null, $profil_image='assets/assets/images/avatars/avatar3.jpeg', $idVendor=null, $deleted=0){
         $this->id_pelanggan = $idPelanggan;
         $this->nama = $nama;
         $this->tanggal_lahir = $tanggal_lahir;
@@ -127,7 +127,7 @@ class Pelanggan
     }
 
     public function Get_Profil_image(){
-        return $this->profil_image;
+        return $this->profile_image;
     }
 
     public function Get_Deleted(){

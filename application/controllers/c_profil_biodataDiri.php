@@ -6,6 +6,7 @@ class c_profil_biodataDiri extends CI_Controller {
 		parent::__construct();
 		// $this->load->model('m_profil_biodataDiri');
 		$this->load->model('class/Model');
+		$this->load->helper('url', 'form');
 	}
  
 	public function index($idU, $tab='biodata'){
@@ -13,6 +14,15 @@ class c_profil_biodataDiri extends CI_Controller {
 		$idV = $data['pelanggan'] -> Get_Id_Vendor();
 		$data['vendor'] = $this->Model->Get_Vendor($idV)[0];
 		$data['judul'] = "Biodata Diri - ". $data['pelanggan'] -> Get_Nama();
+
+		$barang = $this->Model->Get_Barang($idV, 'id_vendor');
+		foreach ($barang as $key => $value) {
+			if ($value->Get_Deleted() == 1) {
+				unset($barang[$key]);
+			}
+		}
+
+		$data['totalBarang'] = count($barang);
 
 		$data['tab'] = $tab;
 
@@ -24,20 +34,20 @@ class c_profil_biodataDiri extends CI_Controller {
 	public function update_pelanggan($status, $idU){
 		switch ($status) {
 			case 'gambar':
-				$config['upload_path'] = base_url()."assets/i/pelanggan_pict";
+				$config['upload_path'] = "./assets";
 				$config['allowed_types'] = 'jpg|png|jpeg|gif';
+				$config['max_size']             = 100;
+				$config['max_width']            = 1024;
+				$config['max_height']           = 768;
 
 				$this->load->library('upload', $config);
 
-				print_r($this->upload->do_upload('gambar'));
-
-				if ($this->upload->do_upload('gambar')) {
-					echo 'sukses';
-					$file = $this->upload->data();
-					$gambar = $file['file_name'];
-					$this->m_profil_biodataDiri->update_image($idU, $gambar);	
+				if (!$this->upload->do_upload('gambarUpload')) {
+					print_r($this->upload->display_errors());
+					// $file = $this->upload->data();
+					// $gambar = $file['file_name'];
 				}else {
-					echo "Gagal";
+					echo "sukses";
 				};
 				break;
 			case 'informasi':
@@ -80,13 +90,17 @@ class c_profil_biodataDiri extends CI_Controller {
 				];
 				break;
 			case 'alamat':
+				$daerah = explode(" ", $this->input->post('alamat_vendor'));
+				$daerah = $daerah[count($daerah)-1];
+
 				$data = [
 					"alamat_vendor" => $this->input->post('alamat_vendor'),
+					"daerah_vendor" => $daerah,
 				];
 				break;
 		}
 		$this->Model->update_vendor($idV, $data);
-		redirect('c_profil_biodataDiri/index/'.$idU);
+		redirect('c_profil_biodataDiri/index/'.$idU.'/vendor');
 	}
 
 	public function tambah_vendor($idU){
@@ -95,12 +109,5 @@ class c_profil_biodataDiri extends CI_Controller {
 
 		redirect('c_registerVendor/index/'.$idV.'/'.$idU);
 	}
-
-	// public function delete_vendor($id){
-	// 	$idV = ($this->m_profil_biodataDiri->get_user($id))[0]->Get_Id_vendor();
-	// 	$this->m_profil_biodataDiri->delete_vendor($idV);
-		
-	// 	redirect('c_profil_biodataDiri/index/'.$id);
-	// }
 	
 }

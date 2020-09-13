@@ -56,7 +56,7 @@
                             </a>
                         </li>
                         <li class="nav-item mx-md-2">
-                            <a href="#" class="nav-link text-center px-3 icon-navbar">
+                            <a href="<?php echo base_url(). 'c_History/index/' .$pelanggan->Get_Id_pelanggan()?>" class="nav-link text-center px-3 icon-navbar">
                                 <i class="fas fa-shopping-cart"></i>
                             </a>
                         </li>

@@ -40,7 +40,7 @@ class c_profil_vendor_barang extends CI_Controller {
 			$this->input->post('nama'),
 			$this->input->post('stok'),
 			$this->input->post('harga_awal'),
-			$this->input->post('harga_awal') * $this->input->post('stok'),
+			$this->input->post('harga_awal') * $this->input->post('stok') * 30,
 			$this->input->post('deskripsi'),
 			date("Y-m-d")
 		);

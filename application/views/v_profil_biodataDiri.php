@@ -16,11 +16,11 @@
                             <div class="col-lg-auto">
                                 <!-- Start: profil pict -->
                                 <div class="card mb-3">
-                                    <div class="card-body text-center"><img class="rounded-circle mb-3 mt-4" src="<?php echo base_url() ?>assets/assets/images/dogs/image2.jpeg" width="200" height="200">
+                                    <div class="card-body text-center"><img class="rounded-circle mb-3 mt-4" src="<?php echo base_url().$pelanggan->Get_Profil_image(); ?>" width="200" height="200">
                                         <!-- <div class="mb-3">
-                                            <form href="<?php echo base_url()."c_profil_biodataDiri/update_pelanggan/gambar/".$pelanggan->Get_Id_pelanggan() ?>">
-                                                <input type="file" nama="gambar">
-                                                <button type='submit'>
+                                            <form action="<?php echo base_url()."c_profil_biodataDiri/update_pelanggan/gambar/".$pelanggan->Get_Id_pelanggan() ?>">
+                                                <input type="file" id="gambarUpload" name="gambarUpload"/>
+                                                <input type="submit" value="Upload Image" />
                                             </form>
                                         </div> -->
                                         <div class="mb-3"><input class="d-none" type="file" id="upload" name='berkas'><a id="upload_link" href="<?php echo base_url().'c_profil_biodataDiri/update_pelanggan/gambar/'.$pelanggan->Get_Id_pelanggan() ?>" style="color: rgb(87,65,217);">Ganti Foto Profil</a></div>
@@ -45,8 +45,10 @@
                                                             <div class="form-group"><label class="form-label">Nama</label><input class="form-control" type="text" value="<?php echo $pelanggan->Get_Nama() ?>" placeholder="Nama anda" style="background-repeat: no-repeat;" name="nama"></div>
                                                             <div class="form-group"><label class="form-label">Tanggal lahir</label><input class="form-control" name="tanggal_lahir" type="date" value="<?php echo $pelanggan->Get_Tanggal_lahir() ?>"></div>
                                                             <div class="form-group"><label class="form-label">Jenis Kelamin</label>
-                                                                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="jenis_kelam" value="laki laki" <?php if($pelanggan->Get_Jenis_kelamin() == "laki laki"){echo "checked";} ?>><label class="form-check-label" for="formCheck-1">Laki laki</label></div>
-                                                                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="jenis_kelam" value="perempuan" <?php if($pelanggan->Get_Jenis_kelamin() == "perempuan"){echo "checked";} ?>><label class="form-check-label" for="formCheck-2">Perempuan</label></div>
+                                                                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-1" name="jenis_kelamin" value="laki laki" <?php if($pelanggan->Get_Jenis_kelamin() == "laki laki"){echo "checked";} ?>><label class="form-check-label" for="formCheck-1">Laki laki</label></div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="form-check"><input class="form-check-input" type="radio" id="formCheck-2" name="jenis_kelamin" value="perempuan" <?php if($pelanggan->Get_Jenis_kelamin() == "perempuan"){echo "checked";} ?>><label class="form-check-label" for="formCheck-2">Perempuan</label></div>
                                                             </div>
                                                             <div class="form-group"><button class="btn btn-primary btn-block" style="height: 40px;margin-top: 10px;" type="submit">Simpan</button></div>
                                                         </form>
@@ -113,7 +115,7 @@
                                                     <div class="modal-body">
                                                         <!-- Start: seven form -->
                                                         <form method="post" action="<?php echo base_url(). 'c_profil_biodataDiri/update_pelanggan/alamat/'. $pelanggan->Get_Id_pelanggan(); ?>">
-                                                            <div class="form-group"><label class="form-label">Alamat Rumah</label><textarea class="form-control" name="alamat_vendor" placeholder="jl."><?php echo $pelanggan->Get_Alamat() ?></textarea></div>
+                                                            <div class="form-group"><label class="form-label">Alamat Rumah</label><textarea class="form-control" name="alamat" placeholder="jl."><?php echo $pelanggan->Get_Alamat() ?></textarea></div>
                                                             <div class="form-group"><button class="btn btn-primary btn-block" style="height: 40px;margin-top: 10px;" type="submit">Simpan</button></div>
                                                         </form>
                                                         <!-- End: seven form -->
@@ -207,30 +209,28 @@
                                                 <h6 class="d-xl-flex align-items-xl-center foto-header-vendor" style="height: 100px;margin-bottom: 20px;">Foto Header Vendor</h6>
                                                 <h6>Nama Vendor</h6>
                                                 <h6>Deskripsi Vendor</h6>
-                                                <h6>Kontak Vendor</h6>
                                             </div>
                                             <div class="col right">
-                                                <img style="background-image: url('<?php echo base_url() ?>assets/assets/images/img/kuta-pantai-paling-kondang-sedunia_130746_1140.jpeg');height: 100px;width: 300px;background-size: cover;" name="headerVendor">
+                                                <img style="background-image: url('<?php echo base_url().$vendor->Get_Header_vendor(); ?>');height: 100px;width: 300px;background-size: cover;" name="headerVendor">
                                                 <span class="tanggalLahir" name="nama_Vendor"><?php echo $vendor->Get_Nama_vendor() ?></span>
                                                 <span class="jenisKelamin" name="deskripsi_Vendor"><?php echo $vendor->Get_Deskripsi_vendor() ?></span>
-                                                <span class="jenisKelamin" name="telepon_vendor"><?php echo $vendor->Get_Hp_vendor() ?></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card bio">
                                     <div class="card-header">
-                                        <h4>Verifikasi Vendor</h4>
+                                        <h4>Email dan Telpon Vendor</h4>
                                         <!-- Start: Basic Modal Button --><button class="btn btn-primary" data-toggle="modal" data-target="#modal6" type="button">Edit</button>
                                         <!-- End: Basic Modal Button -->
                                         <div class="modal fade" role="dialog" tabindex="-1" id="modal6">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h2 class="modal-title">Verifikasi Vendor</h2><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                                        <h2 class="modal-title">Email dan Telpon Vendor</h2><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                                                     <div class="modal-body">
                                                         <!-- Start: seven form -->
-                                                        <form method="post" action="<?php echo base_url(). 'c_profil_biodataDiri/update_vendor/emtel/'.$pelanggan->Get_Id_pelanggan(); ?>">
+                                                        <form method="post" action="<?php echo base_url(). 'c_profil_biodataDiri/update_vendor/emtel/'. $pelanggan->Get_Id_pelanggan() .'/'.$pelanggan->Get_Id_vendor(); ?>">
                                                             <div class="form-group"><label class="form-label">Email</label><input class="form-control" type="text" value="<?php echo $vendor->Get_Email_vendor() ?>" placeholder="Email vendor" style="background-repeat: no-repeat;" name="email_vendor"></div>
                                                             <div class="form-group"><label class="form-label">Telepon</label><input class="form-control" type="text" value="<?php echo $vendor->Get_Hp_vendor() ?>" placeholder="No telepon vendor" style="background-repeat: no-repeat;" name="telepon_vendor"></div>
                                                             <div class="form-group"><button class="btn btn-primary btn-block" style="height: 40px;margin-top: 10px;" type="submit">Simpan</button></div>
@@ -263,7 +263,7 @@
                                                         <h2 class="modal-title">Alamat Fisik Vendor</h2><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                                                     <div class="modal-body">
                                                         <!-- Start: seven form -->
-                                                        <form method="post" action="<?php echo base_url(). 'c_profil_biodataDiri/update_vendor/alamat/'. $pelanggan->Get_Id_pelanggan(); ?>">
+                                                        <form method="post" action="<?php echo base_url(). 'c_profil_biodataDiri/update_vendor/alamat/'. $pelanggan->Get_Id_pelanggan() .'/'.$pelanggan->Get_Id_vendor(); ?>">
                                                             <div class="form-group"><label class="form-label">Alamat Vendor</label><textarea class="form-control" name="alamat_vendor" placeholder="jl."><?php echo $vendor->Get_Alamat_vendor() ?></textarea></div>
                                                             <div class="form-group"><button class="btn btn-primary btn-block" style="height: 40px;margin-top: 10px;" type="submit">Simpan</button></div>
                                                         </form>
@@ -290,7 +290,7 @@
                                             <div class="col-lg-3">
                                                 <h6>Jumlah Produk</h6>
                                             </div>
-                                            <div class="col right"><span class="email" name="jumlahProduk">Text</span></div>
+                                            <div class="col right"><span class="email" name="jumlahProduk"><?= $totalBarang ?></span></div>
                                         </div>
                                     </div>
                                 </div>

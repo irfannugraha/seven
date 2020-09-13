@@ -4,16 +4,20 @@ class Profilevendor extends CI_Controller
 {
     public function __construct(){
         parent::__construct();
-        $this->load->model('ProfileVendorModel');
+        // $this->load->model('ProfileVendorModel');
+        $this->load->model('class/Model');
     }
 
 
-    public function index($id_vendor)
+    public function index($idV, $idU=null)
     {
+        $data['profileVen'] = $this->Model->Get_Vendor($idV)[0];
+        $data['produkVen'] = $this->Model->Get_Barang($idV, 'id_vendor');
+
         $this->load->library('pagination');
         
         $config['base_url'] = 'http://localhost/sewavendor/profilevendor/index';
-        $config['total_rows'] = $this->ProfileVendorModel->countProdukVendor($id_vendor);
+        $config['total_rows'] = count($data['produkVen']);
         $config['per_page'] = 15;
 
         $config['full_tag_open'] = "<nav aria-label='Page navigation example'><ul class='pagination justify-content-center mt-5 mb-0'>";
@@ -38,10 +42,18 @@ class Profilevendor extends CI_Controller
         $this->pagination->initialize($config);
 
         $data['start'] = $this->uri->segment(4);
-        $data['profileVen'] = $this->ProfileVendorModel->getVendorbyId($id_vendor);
-        $data['produkVen'] = $this->ProfileVendorModel->getProdukByVendor($id_vendor, $config['per_page'], $data['start']);
-        $data['judul'] = $data['profileVen']['nama_vendor']." | Seven";
-        $this->load->view('template/navbarnologin', $data);
+        $data['judul'] = $data['profileVen']->Get_Nama_vendor()." | Seven";
+        
+        if ($idU){
+            $data['pelanggan'] = $this->Model->Get_Pelanggan($idU)[0];
+            $data['vendor'] = $this->Model->Get_Vendor($data['pelanggan']->Get_Id_vendor())[0];
+            $this->load->view('template/navbarlogin', $data);
+        }
+        else{
+            $data['pelanggan'] = null;
+            $this->load->view('template/navbarnologin', $data);
+        }
+
         $this->load->view('profilevendor/profilevendor', $data);
         $this->load->view('template/footer');
     }

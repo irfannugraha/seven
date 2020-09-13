@@ -51,11 +51,11 @@ class Model extends CI_Model
                 $data['email'],
                 $data['password'],
                 $data['nama'],
+                $data['last_update'],
                 $data['alamat'],
                 $data['no_hp'],
                 $data['tanggal_lahir'],
                 $data['jenis_kelamin'],
-                $data['last_update'],
                 $data['profile_image'],
                 $data['id_vendor'],
                 $data['deleted']
@@ -86,9 +86,9 @@ class Model extends CI_Model
             $Vendor = new Vendor(
                 $data['id_vendor'],
                 $data['nama_vendor'],
+                $data['hp_vendor'],
                 $data['alamat_vendor'],
                 $data['daerah_vendor'],
-                $data['hp_vendor'],
                 $data['profile_img'],
                 $data['header_vendor'],
                 $data['deskripsi_vendor'],
@@ -121,8 +121,11 @@ class Model extends CI_Model
                 $data['id_transaksi'],
                 $data['id_pelanggan'],
                 $data['id_barang'],
-                $data['tanggal_pembayaran'],
                 $data['tanggal_pemesanan'],
+                $data['tanggal_pengembalian'],
+                $data['tanggal_pembayaran'],
+                $data['foto_bukti'],
+                $data['biaya'],
                 $data['deleted']
             );
             array_push($TransaksiArray, $Transaksi);
@@ -210,6 +213,10 @@ class Model extends CI_Model
         $arr[1] = sprintf('%03d', ($arr[1] + 1));
 
         return implode($arr);
+    }
+
+    public function get_CarouselImage(){
+        return $this->db->get('carousel_image')->result_array();
     }
 
     // Update

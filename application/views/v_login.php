@@ -14,7 +14,7 @@
 
 <body>
     <!-- Start: Registration Form with Photo -->
-    <div class="register" style="background-image: url('<?php echo base_url() ?>assets/assets/images/Group%202.png');background-position: center;background-size: contain;background-repeat: no-repeat;"><h2 class="text-center">SEVEN</h2>
+    <div class="register" style="background-image: url('<?php echo base_url() ?>assets/assets/images/Group%202.png');background-position: center;background-size: contain;background-repeat: no-repeat;"><a href="<?= base_url().'C_Home/index' ?>"><h2 class="text-center">SEVEN</h2></a>
         <!-- Start: Form Container -->
 
         <!-- Modal -->
@@ -49,18 +49,11 @@
                 <div class="form-group"><label class="form-label">Kata sandi</label><input class="form-control" name="password" type="password">
                     <label id="statusPass" style="color: red" class="form-label d-lg-none">Password salah</label>
                 </div>
+                <button type="button" class="btn btn-link Lupa_Sandi" data-toggle="modal" data-target="#myModal" style="padding: 0px; padding-bottom: 40px">Lupa Kata Sandi?</button>                    
+                <!-- <a class="Lupa_Sandi" href="<?php echo base_url(). 'c_login/send'; ?> data-toggle="modal" data-target="#myModal"">Lupa Kata Sandi?</a> -->
                 <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Masuk</button></div>
                 <div class="form-group">
-                    <div class="separator"><span>atau login dengan</span></div>
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-link Lupa_Sandi" data-toggle="modal" data-target="#myModal">Lupa Kata Sandi?</button>                    
-                    <!-- <a class="Lupa_Sandi" href="<?php echo base_url(). 'c_login/send'; ?> data-toggle="modal" data-target="#myModal"">Lupa Kata Sandi?</a> -->
-                </div>
-                <div class="form-group"><button class="btn btn-outline-primary btn-block" type="submit"><i class="fab fa-google"></i>Google</button></div>
-                <div class="form-group"><button class="btn btn-outline-primary btn-block" type="submit"><i class="fab fa-facebook-square"></i>Facebook</button></div>
-                <div class="form-group">
-                    <div class="already"><span>Belum punya akun?&nbsp;</span><a href="<?php echo base_url(). 'c_register'; ?>">Daftar</a></div>
+                    <div class="separator"><span>Belum punya akun?&nbsp;</span><a href="<?php echo base_url(). 'c_register'; ?>">Daftar</a></div>
                 </div>
             </form>
         </div>

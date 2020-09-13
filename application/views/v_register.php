@@ -13,7 +13,7 @@
 
 <body>
 <div class="register" style="background-image: url(&quot;<?php echo base_url() ?>assets/assets/images/Group%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-    <h2 class="text-center">SEVEN</h2>
+    <a href="<?= base_url().'C_Home/index' ?>"><h2 class="text-center" style="font-family: Mermaid; font-size: 50px; color: #0D0C52;">SEVEN</h2></a>
     <div class="form-container">
         <form method="post" action="<?php echo base_url(). 'c_register/tambahAkun/'; ?>">
             <h1>Daftar</h1>
@@ -25,13 +25,8 @@
             </div>
             <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Daftar</button></div>
             <div class="form-group">
-                <div class="separator"><span>atau login dengan</span></div>
+                <div class="separator"><span>sudah punya akun?&nbsp;</span><a href="<?php echo base_url(). 'c_login'; ?>">Masuk</a></div>
             </div>
-            <div class="form-group"><button class="btn btn-outline-primary btn-block google" type="submit">Google</button></div>
-            <div class="form-group"><button class="btn btn-outline-primary btn-block facebook" type="submit">Facebook</button></div>
-            <div class="form-group">
-                <div class="already"><span>Sudah punya akun?&nbsp;</span><a href="<?php echo base_url(). 'c_login'; ?>">Masuk</a></div>
-            </div>            
         </form>
     </div>
 </div>
